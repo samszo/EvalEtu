@@ -1,0 +1,464 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	    <title>Statistiques de planning CDNL 2013 - 2014</title> 
+		<meta charset="utf-8" />
+		<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+		<link type="text/css" href="css/planning.css" rel="stylesheet" />
+	    <script type="text/javascript" src="js/d3.js"></script>
+		<script type="text/javascript" src="js/gantt-chart-d3.js"></script>	    
+	</head> 
+  <body> 
+    <h1>Planning CDNL 2013 - 2014</h1>
+    <div id="tabType"></div>
+    <br/>
+    <div id="tabCou"></div>
+    <br/>
+    <div id="tabInt"></div>
+    <br/>
+    <h2>Semaines du premier semestre</h2>
+    <div id="tabLundi1"><h3>LUNDI</h3></div>
+    <div id="tabMardi1"><h3>MARDI</h3></div>
+    <div id="tabMercredi1"><h3>MERCREDI</h3></div>
+    <div id="tabJeudi1"><h3>JEUDI</h3></div>
+    <div id="tabVendredi1"><h3>VENDREDI</h3></div>
+    <div id="tabSamedi1"><h3>SAMEDI</h3></div>
+    <h2>Semaine du deuxième semestre</h2>
+    <div id="tabLundi2"><h3>LUNDI</h3></div>
+    <div id="tabMardi2"><h3>MARDI</h3></div>
+    <div id="tabMercredi2"><h3>MERCREDI</h3></div>
+    <div id="tabJeudi2"><h3>JEUDI</h3></div>
+    <div id="tabVendredi2"><h3>VENDREDI</h3></div>
+    <div id="tabSamedi2"><h3>SAMEDI</h3></div>
+    <br/>
+    <div id="planCou"></div>
+    <br/>
+    <div id="planInt"></div>
+    <br/>
+    <div id="footer"><br/></div>
+    
+    <script id='script'>
+    var largeTot=200;
+    /*
+    var urlCou = "https://docs.google.com/spreadsheet/pub?key=0AsJMmUNA97M2dGlRYUV3amV0dXJ4OXVBV01mZ2N4M0E&single=true&gid=2&output=csv";
+	var urlInt = "https://docs.google.com/spreadsheet/pub?key=0AsJMmUNA97M2dGlRYUV3amV0dXJ4OXVBV01mZ2N4M0E&single=true&gid=1&output=csv";
+	var urlCal = "https://docs.google.com/spreadsheet/pub?key=0AsJMmUNA97M2dGlRYUV3amV0dXJ4OXVBV01mZ2N4M0E&single=true&gid=0&output=csv";
+    */
+	var urlCou = "data/PlanningCDNL13-14_2.csv";
+	var urlInt = "data/PlanningCDNL13-14_1.csv";
+	var tasksInt; 
+	var urlCal = "data/PlanningCDNL13-14_0.csv";
+	
+	var dataCal, dataCou, dataInt;
+	
+	var cumulInt = new Array();
+	var cumulCou = new Array();
+	var cumulType = new Array();
+	var nbInt;
+	var nbCou;
+	var nbCal;
+	var nbHeureCou = 3;
+
+	var colsJours = ["Heure", "Salle","Nbrs étudiants","Mr","Mme","Nom","Prénom","L1","L2","L3","M1","M2","Autres préciser","MATIERE ENSEIGNÉE","code EC/ APOGE"];
+	var dataJours = {"Monday1":[],"Tuesday1":[],"Wednesday1":[],"Thursday1":[],"Friday1":[],"Saturday1":[],"Monday2":[],"Tuesday2":[],"Wednesday2":[],"Thursday2":[],"Friday2":[],"Saturday2":[]};
+	
+	var gantt, xB, brush;
+	
+	//chargement des données depuis le drive google
+	d3.csv(urlCou, function(data1) {
+		dataCou = data1;
+		
+		d3.csv(urlCal, function(data2) {
+			dataCal = data2;
+
+			d3.csv(urlInt, function(data3) {
+				dataInt = data3;
+				creaPlanning();
+			});
+			
+		});
+		
+	});
+  
+	function creaPlanning(){
+
+    	//construction des données
+    	nbInt = dataInt.length;
+    	nbCou = dataCou.length;
+    	nbCal = dataCal.length;
+    	
+    	//initialisation des cumuls
+		for(var i=0; i < nbInt; i++){
+			cumulType[dataInt[i]["Type"]]={"nbHeure":0,'Type':dataInt[i]["Type"]};
+			cumulInt[dataInt[i]["Nom"]]= {'nbHeure':0,'cours':[]};
+		}
+		for(var i=0; i < nbCou; i++){
+			cumulCou[dataCou[i]["Code EC"]]= {'nbHeure':0,'intervenants':[]};
+		}
+		
+		//calcul des cumuls d'heure
+		for(var i=0; i < nbCal; i++){
+			//console.log(dataCal[i]);
+			calculCumul("AM", dataCal[i]);
+			calculCumul("PM1", dataCal[i]);
+			calculCumul("PM2", dataCal[i]);
+		}
+		
+		//Mise à jour des datas pour l'affichage
+		tasksInt = new Array();		
+    	var taskNamesInt = new Array();		
+		for(var i=0; i < nbInt; i++){
+			//dtInt.push({'Intervenant':x,'Type':cumulInt[x]["type"],"Nb d'heure":cumulInt[x]["nbHeure"]});
+			dataInt[i]["Nb d'heure"]=cumulInt[dataInt[i]["Nom"]]["nbHeure"];
+			dataInt[i]["cours"]=cumulInt[dataInt[i]["Nom"]]["cours"];
+			dataInt[i]["Planning"]="planInt_"+i;
+			cumulType[dataInt[i]["Type"]]["nbHeure"]+=cumulInt[dataInt[i]["Nom"]]["nbHeure"];
+			//construction de la liste pour le planning général
+			if(cumulInt[dataInt[i]["Nom"]]["nbHeure"]>0){
+				taskNamesInt.push(dataInt[i]["Nom"]);
+				var arrListeCou = new Array();		
+				for(var j=0; j < dataInt[i]["cours"].length; j++){
+					tasksInt.push(dataInt[i]["cours"][j]);
+					if(!arrListeCou[dataInt[i]["cours"][j]["status"]])
+						arrListeCou[dataInt[i]["cours"][j]["status"]] = {"cours":dataInt[i]["cours"][j]["status"],"nbHeure":nbHeureCou};
+					else
+						arrListeCou[dataInt[i]["cours"][j]["status"]]["nbHeure"]+=nbHeureCou;
+
+				}
+				for(var x in arrListeCou){
+					if(!dataInt[i]["liste des cours"]) dataInt[i]["liste des cours"]=arrListeCou[x].cours+" ("+arrListeCou[x].nbHeure+" h)";
+					else dataInt[i]["liste des cours"] += ", "+arrListeCou[x].cours+" ("+arrListeCou[x].nbHeure+" h)";
+				}
+
+			}
+		}
+		
+    	var taskNamesCou = new Array();		
+		var tasksCou = new Array();		
+		for(var i=0; i < nbCou; i++){
+			dataCou[i]["Nb d'heure"]=cumulCou[dataCou[i]["Code EC"]]["nbHeure"];
+			dataCou[i]["intervenants"]=cumulCou[dataCou[i]["Code EC"]]["intervenants"];
+			//construction de la liste pour le planning général
+			if(cumulCou[dataCou[i]["Code EC"]]["nbHeure"]>0){
+				taskNamesCou.push(dataCou[i]["Code EC"]);
+				var arrListeInt = new Array();		
+				for(var j=0; j < dataCou[i]["intervenants"].length; j++){
+					tasksCou.push(dataCou[i]["intervenants"][j]);
+					if(!arrListeInt[dataCou[i]["intervenants"][j]["status"]])
+						arrListeInt[dataCou[i]["intervenants"][j]["status"]] = {"itrv":dataCou[i]["intervenants"][j]["status"],"nbHeure":nbHeureCou};
+					else
+						arrListeInt[dataCou[i]["intervenants"][j]["status"]].nbHeure += nbHeureCou;
+				}
+				dataCou[i]["heureIntervenants"]=arrListeInt;
+				for(x in arrListeInt){
+					if(!dataCou[i]["liste des intervenants"]) dataCou[i]["liste des intervenants"]=arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+" h)";
+					else dataCou[i]["liste des intervenants"] += ", "+arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+" h)";
+				}
+			}
+		}
+    	var dataType = new Array();		
+		for(var x in cumulType){
+			dataType.push({"Nb d'heure":cumulType[x]["nbHeure"],'Type':cumulType[x]["Type"]});
+		}
+		
+		//création du tableau des types
+	    creaTable("#tabType", dataType, ["Type", "Nb d'heure"]);
+
+		//création du tableau des intervenants
+	    creaTable("#tabInt", dataInt, ["Civilité", "Prénom", "Nom", "Nb d'heure", "Type", "liste des cours"]);
+
+		//création du tableau des cours
+	    creaTable("#tabCou", dataCou, ["Intitulés des UE", "Code EC", "Intitulés des EC", "Code Apogée", "Nb d'heure", "liste des intervenants"]);
+		
+		//création du tableau pour la demande de cumul
+		var dataCouCumul = new Array();		
+		for(var i=0; i < nbCou; i++){
+			var arrListeInt = dataCou[i]["heureIntervenants"];
+			for(x in arrListeInt){
+				dataCouCumul.push({"ETP":"LPMTAI", "VET":"920", "ELP":dataCou[i]["Code Apogée"], "Element Pédagogique":dataCou[i]["Intitulés des EC"], "calcul charge":"OUI", "Volume horaire":dataCou[i]["Volume  EC"], "CM":dataCou[i]["CM"], "TD":dataCou[i]["TD"], "TP":dataCou[i]["TP"], "NOM":arrListeInt[x].itrv, "vol horairei":arrListeInt[x].nbHeure, "CMi":"0", "TDi":arrListeInt[x].nbHeure, "TPi":0});
+			}
+		}	
+	    creaTable("#tabCou", dataCouCumul, ["ETP", "VET", "ELP", "Element Pédagogique", "calcul charge", "Volume horaire", "CM", "TD", "TP", "NOM", "vol horairei", "CMi", "TDi", "TPi"]);
+
+	    //création du gant des cours
+		var taskStatus = {
+			    "SUCCEEDED" : "bar",
+			    "FAILED" : "bar-failed",
+			    "RUNNING" : "bar-running",
+			    "KILLED" : "bar-killed"
+			};		
+	    //creaGant("#planCou", tasksCou, taskNamesCou, taskStatus, 0, 600);
+
+		//création du gants des intervenants
+		var taskStatusInt = {
+				"UE1-EC1":"UE1-EC1",
+				"UE1-EC2":"UE1-EC2",
+				"UE2-EC1":"UE2-EC1",
+				"UE2-EC2":"UE2-EC2",
+				"UE2-EC3":"UE2-EC3",
+				"UE3-EC1":"UE3-EC1",
+				"UE3-EC2":"UE3-EC2",
+				"UE3-EC3":"UE3-EC3",
+				"UE5_2-EC1":"UE5_2-EC1",
+				"UE5_2-EC2":"UE5_2-EC2",
+				"UE5_2-EC3":"UE5_2-EC3",
+				"UE5_2-EC4":"UE5_2-EC4"
+			};		
+	    creaGant("#planInt", tasksInt, taskNamesInt, taskStatusInt, 0, 600);
+	    
+		//création du tableau par jour de la semaine
+    	var dataDoublons = new Array();
+    	var dataPlanInt = new Array();
+    	var formatJour = d3.time.format("%A");
+    	var formatHeure = d3.time.format("%H:%M");
+    	var formatDateInt = d3.time.format("%a %d-%m");
+    	var formatOrdre = d3.time.format("%Y-%m-%d");
+		var jour, dInt, cou, mr, mme;
+    	var nbTask = tasksCou.length;
+    	var end1semestre = formatOrdre.parse("2014-02-01");
+    	for(var i=0; i < nbTask; i++){
+    		//calcul l'index = jour de la semaine + 1er ou 2e semestre
+    		console.log(i+" - "+tasksCou[i]["taskName"]+" : "+tasksCou[i]["startDate"]);
+    		jour = formatJour(tasksCou[i]["startDate"]);
+    		if(fCompareDate(end1semestre,tasksCou[i]["startDate"])<0) jour += "1"; else jour += "2"; 
+			//calcule la plage horaire
+    		heure = formatHeure(tasksCou[i]["startDate"])+" - "+formatHeure(tasksCou[i]["endDate"]);
+    		//recherche les information sur l'intervenant et le cours
+			dInt = chercheInt(tasksCou[i]["status"]);
+    		cou = chercheCou(tasksCou[i]["taskName"]);
+    		//calcule la civilité
+    		if(dInt["Civilité"]=="Mme"){
+    			mr="";
+    			mme="x";
+    		}else{
+    			mr="x";
+    			mme="";    			
+    		}
+    		//construction d'une clef pour éviter les doublons
+    		if(!dataDoublons[cou["Code Apogée"]+dInt["Nom"]+jour+heure]){
+    			dataDoublons[cou["Code Apogée"]+dInt["Nom"]+jour+heure] = 1;
+        		dataJours[jour].push({"ordre":heure+cou["Code EC"]+dInt["Nom"],"Heure":heure,"Salle":tasksCou[i]["lieu"],"Nbrs étudiants":15,"Mr":mr,"Mme":mme,"Nom":dInt["Nom"],"Prénom":dInt["Prénom"],"L1":"","L2":"","L3":"x","M1":"","M2":"","Autres préciser":"","MATIERE ENSEIGNÉE":cou["Code EC"]+" : "+cou["Intitulés des EC"],"code EC/ APOGE":cou["Code Apogée"]});    			
+    		}
+    		dataPlanInt.push({"ordre":dInt["Nom"]+formatOrdre(tasksCou[i]["startDate"])+heure,"Intervenant":dInt["Civilité"]+" "+dInt["Prénom"]+" "+dInt["Nom"],"Date":formatDateInt(tasksCou[i]["startDate"]), "Heure":heure,"Salle":tasksCou[i]["lieu"],"Cours":cou["Code EC"]+" : "+cou["Intitulés des EC"]});
+		}
+    	//création de la table des planning par intervenant
+		creaTableOrdre(dataPlanInt, ["Intervenant","Date","Heure","Salle","Cours"], "#tabInt");
+    	
+    	
+    	//création des tables du premier semestre
+		creaTableOrdre(dataJours["Monday1"], colsJours, "#tabLundi1");
+		creaTableOrdre(dataJours["Tuesday1"], colsJours, "#tabMardi1");
+		creaTableOrdre(dataJours["Wednesday1"], colsJours, "#tabMercredi1");
+		creaTableOrdre(dataJours["Thursday1"], colsJours, "#tabJeudi1");
+		creaTableOrdre(dataJours["Friday1"], colsJours, "#tabVendredi1");
+		creaTableOrdre(dataJours["Saturday1"], colsJours, "#tabSamedi1");
+    	
+		//création des tables du deuxième semestre
+		creaTableOrdre(dataJours["Monday2"], colsJours, "#tabLundi2");
+		creaTableOrdre(dataJours["Tuesday2"], colsJours, "#tabMardi2");
+		creaTableOrdre(dataJours["Wednesday2"], colsJours, "#tabMercredi2");
+		creaTableOrdre(dataJours["Thursday2"], colsJours, "#tabJeudi2");
+		creaTableOrdre(dataJours["Friday2"], colsJours, "#tabVendredi2");
+		creaTableOrdre(dataJours["Saturday2"], colsJours, "#tabSamedi2");
+		
+	}
+	function creaTable(id, data, columns){
+		//création du tableau des cours
+		var table = d3.select(id).append("table"),
+        	thead = table.append("thead"),
+        	tbody = table.append("tbody");
+
+	    // append the header row
+	    thead.append("tr")
+	        .selectAll("th")
+	        .data(columns)
+	        .enter()
+	        .append("th")
+	            .text(function(column) { return column; });
+
+	    // create a row for each object in the data
+	    var rows = tbody.selectAll("tr")
+	        .data(data)
+	        .enter()
+	        .append("tr");
+
+	    // create a cell in each row for each column
+	    var cells = rows.selectAll("td")
+	        .data(function(row) {
+	            return columns.map(function(column) {
+	                return {column: column, value: row[column]};
+	            });
+	        })
+	        .enter()
+	        .append("td")
+	        .html(function(d){
+		    	var html;
+		    	if(d.column == "Planning"){
+		    		html="<div id='"+d.value+"' />";
+		    	}else{
+		    		html= d.value;
+		    	}
+		    	return html;
+		    	});	
+		
+	}
+	function creaGant(conteneur, tasks, taskNames, taskStatus, w, h){
+
+		tasks.sort(function(a, b) {
+		    return a.endDate - b.endDate;
+		});
+		var maxDate = tasks[tasks.length - 1].endDate;
+		tasks.sort(function(a, b) {
+		    return a.startDate - b.startDate;
+		});
+		var minDate = tasks[0].startDate;
+
+		//var format = "%H:%M";
+		//var format = "%d/%m/%Y %H:%M";
+		//var format = "%a %d-%m %H:%M";
+		var format = "%d-%m";
+		
+
+		gantt = d3.gantt().taskTypes(taskNames).taskStatus(taskStatus).tickFormat(format);
+		gantt(tasks, conteneur, w, h);
+
+		addBrush(conteneur, w, 10, tasks);
+	}
+	
+	function calculCumul(type, d){
+		var t;
+    	var format = d3.time.format("%d/%m/%Y %H:%M:%S");
+		if(d["Intervenant"+type]){
+			cumulInt[d["Intervenant"+type]]["nbHeure"] += nbHeureCou;
+			cumulCou[d["EC"+type]]["nbHeure"] += nbHeureCou;
+			t = {"lieu":d["Lieu"+type], "startDate":format.parse(d["Date"] + " " + d[type+"deb"]),"endDate":format.parse(d["Date"] + " " + d[type+"fin"]),"taskName":d["Intervenant"+type],"status":d["EC"+type]};
+			cumulInt[d["Intervenant"+type]]["cours"].push(t);				
+			t = {"lieu":d["Lieu"+type], "startDate":format.parse(d["Date"] + " " + d[type+"deb"]),"endDate":format.parse(d["Date"] + " " + d[type+"fin"]),"status":d["Intervenant"+type],"taskName":d["EC"+type]};
+			cumulCou[d["EC"+type]]["intervenants"].push(t);
+		}		
+	}
+	
+	
+	function chercheInt(nom){
+		for(var i=0; i < nbInt; i++){
+			if(dataInt[i]["Nom"]==nom) return dataInt[i];		
+		}
+	}
+
+	function chercheCou(code){
+		for(var i=0; i < nbCou; i++){
+			if(dataCou[i]["Code EC"]==code) return dataCou[i];		
+		}		
+	}
+
+	function creaTableOrdre(data, cols, div){
+		data.sort(function(a, b) {
+		    return a.ordre < b.ordre ? -1 : a.ordre > b.ordre ? 1 : 0;
+		});
+	    creaTable(div, data, cols);
+	}
+	function fCompareDate(pDateDebut,pDateFin) { 
+		var DureeDebut = Date.parse(pDateDebut); 
+		var DureeFin = Date.parse(pDateFin); 
+
+		var iComparaison= DureeFin - DureeDebut; 
+
+		return iComparaison; 
+	}
+	
+    function addBrush (conteneur, w, h, data){
+		//ajoute la barre de sélection
+		
+		var margin =  {top: 6, right: 40, bottom: 60, left: 150},
+		    width = w ;//- margin.left - margin.right,
+	    	height = h ;//- margin.top - margin.bottom;
+		if(!width) width = document.body.clientWidth - margin.right - margin.left-5;
+		
+		xB = d3.time.scale().range([0, width]).domain(d3.extent(data.map(function(d) { 
+			return d.startDate; 
+			}))),
+		y = d3.scale.linear().range([height, 0]).domain([0, 10]);
+		xAxis = d3.svg.axis().scale(xB).orient("bottom"),
+		area = d3.svg.area()
+		    .interpolate("monotone")
+		    .x(function(d) { 
+		    	return xB(d.startDate); 
+		    	})
+		    .y0(h)
+		    .y1(function(d) { 
+		    	return y(10); 
+		    	});		
+		
+		brush = d3.svg.brush()
+	    .x(xB)
+	    .on("brush", brushed);		
+
+		var svg = d3.select(conteneur)
+			.append("svg")
+	        .attr("class", "brush-chart")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom);
+
+        svg.append("defs").append("clipPath")
+		    .attr("id", "clip")
+		  .append("rect")
+		    .attr("width", width)
+		    .attr("height", height);
+        var context = svg.append("g")
+        	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        context.append("path")
+        .datum(data)
+        .attr("d", area);
+
+	    context.append("g")
+	        .attr("class", "x axis")
+	        .attr("transform", "translate(0," + height + ")")
+	        .call(xAxis);
+	
+	    context.append("g")
+	        .attr("class", "x brush")
+	        .call(brush)
+	      .selectAll("rect")
+	        .attr("y", -6)
+	        .attr("height", height + 7);        
+	};
+
+	function brushed() {
+		var domain;
+		if(brush.empty())
+			domain=xB.domain();
+		else
+			domain=brush.extent();
+		changeTimeDomain(domain);
+	}
+	
+	function changeTimeDomain(timeDomain) {		
+		var ampleurDate = timeDomain[1]-timeDomain[0];
+	    //case "1hr":
+	    if(ampleurDate < 3600*1000) format = "%H:%M:%S";
+		//case "3hr":
+	    if(ampleurDate > 3600*1000 && ampleurDate < 3600*1000*6) format = "%H:%M";
+		//case "1day":
+	    if(ampleurDate > 3600*1000*6 && ampleurDate < 3600*1000*24) format = "%a %d %H:%M";
+	    if(ampleurDate > 3600*1000*24*14) format = "%d-%m";
+
+	    gantt.timeDomain(timeDomain);
+	    gantt.tickFormat(format);
+	    //filtre les data
+	    var tasks = tasksInt.filter(function (x) {
+	        return x.startDate > timeDomain[0] && x.endDate < timeDomain[1];
+	    });
+	    gantt.redraw(tasks);
+	}
+	function getEndDate() {
+	    var lastEndDate = Date.now();
+	    if (tasks.length > 0) {
+		lastEndDate = tasks[tasks.length - 1].endDate;
+	    }
+
+	    return lastEndDate;
+	}	
+	
+	</script>
+  </body>
+</html>
