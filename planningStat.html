@@ -119,10 +119,11 @@
 				var arrListeCou = new Array();		
 				for(var j=0; j < dataInt[i]["cours"].length; j++){
 					tasksInt.push(dataInt[i]["cours"][j]);
+					var dDiff = dateDiff(dataInt[i]["cours"][j]["startDate"],dataInt[i]["cours"][j]["endDate"]);
 					if(!arrListeCou[dataInt[i]["cours"][j]["status"]])
-						arrListeCou[dataInt[i]["cours"][j]["status"]] = {"cours":dataInt[i]["cours"][j]["status"],"nbHeure":nbHeureCou};
+						arrListeCou[dataInt[i]["cours"][j]["status"]] = {"cours":dataInt[i]["cours"][j]["status"],"nbHeure":dDiff.hour};
 					else
-						arrListeCou[dataInt[i]["cours"][j]["status"]]["nbHeure"]+=nbHeureCou;
+						arrListeCou[dataInt[i]["cours"][j]["status"]]["nbHeure"]+=dDiff.hour;
 
 				}
 				for(var x in arrListeCou){
@@ -145,14 +146,14 @@
 				for(var j=0; j < dataCou[i]["intervenants"].length; j++){
 					tasksCou.push(dataCou[i]["intervenants"][j]);
 					if(!arrListeInt[dataCou[i]["intervenants"][j]["status"]])
-						arrListeInt[dataCou[i]["intervenants"][j]["status"]] = {"itrv":dataCou[i]["intervenants"][j]["status"],"nbHeure":nbHeureCou};
+						arrListeInt[dataCou[i]["intervenants"][j]["status"]] = {"itrv":dataCou[i]["intervenants"][j]["status"],"nbHeure":1};
 					else
-						arrListeInt[dataCou[i]["intervenants"][j]["status"]].nbHeure += nbHeureCou;
+						arrListeInt[dataCou[i]["intervenants"][j]["status"]].nbHeure += 1;
 				}
 				dataCou[i]["heureIntervenants"]=arrListeInt;
 				for(x in arrListeInt){
-					if(!dataCou[i]["liste des intervenants"]) dataCou[i]["liste des intervenants"]=arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+" h)";
-					else dataCou[i]["liste des intervenants"] += ", "+arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+" h)";
+					if(!dataCou[i]["liste des intervenants (nb. de séance)"]) dataCou[i]["liste des intervenants (nb. de séance)"]=arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+")";
+					else dataCou[i]["liste des intervenants (nb. de séance)"] += ", "+arrListeInt[x].itrv+" ("+arrListeInt[x].nbHeure+")";
 				}
 			}
 		}
@@ -168,7 +169,7 @@
 	    creaTable("#tabInt", dataInt, ["Civilité", "Prénom", "Nom", "Nb d'heure", "Type", "liste des cours"]);
 
 		//création du tableau des cours
-	    creaTable("#tabCou", dataCou, ["Intitulés des UE", "Code EC", "Intitulés des EC", "Code Apogée", "Nb d'heure", "liste des intervenants"]);
+	    creaTable("#tabCou", dataCou, ["Intitulés des UE", "Code EC", "Intitulés des EC", "Code Apogée", "Nb d'heure", "liste des intervenants (nb. de séance)"]);
 		
 		//création du tableau pour la demande de cumul
 		var dataCouCumul = new Array();		
@@ -329,16 +330,40 @@
 		var t;
     	var format = d3.time.format("%d/%m/%Y %H:%M:%S");
 		if(d["Intervenant"+type]){
-			cumulInt[d["Intervenant"+type]]["nbHeure"] += nbHeureCou;
-			cumulCou[d["EC"+type]]["nbHeure"] += nbHeureCou;
+			nbHeure =  getNbHeure(d[type+"deb"], d[type+"fin"]);
+			cumulInt[d["Intervenant"+type]]["nbHeure"] += nbHeure;
+			cumulCou[d["EC"+type]]["nbHeure"] += nbHeure;
 			t = {"lieu":d["Lieu"+type], "startDate":format.parse(d["Date"] + " " + d[type+"deb"]),"endDate":format.parse(d["Date"] + " " + d[type+"fin"]),"taskName":d["Intervenant"+type],"status":d["EC"+type]};
 			cumulInt[d["Intervenant"+type]]["cours"].push(t);				
 			t = {"lieu":d["Lieu"+type], "startDate":format.parse(d["Date"] + " " + d[type+"deb"]),"endDate":format.parse(d["Date"] + " " + d[type+"fin"]),"status":d["Intervenant"+type],"taskName":d["EC"+type]};
 			cumulCou[d["EC"+type]]["intervenants"].push(t);
 		}		
 	}
-	
-	
+
+	function getNbHeure(deb, fin){
+		var arrDeb = deb.split(":");
+		var arrFin = fin.split(":");
+		return  arrFin[0] - arrDeb[0];
+	}
+
+	function dateDiff(date1, date2){
+	    var diff = {}                           // Initialisation du retour
+	    var tmp = date2 - date1;
+	 
+	    tmp = Math.floor(tmp/1000);             // Nombre de secondes entre les 2 dates
+	    diff.sec = tmp % 60;                    // Extraction du nombre de secondes
+	 
+	    tmp = Math.floor((tmp-diff.sec)/60);    // Nombre de minutes (partie entière)
+	    diff.min = tmp % 60;                    // Extraction du nombre de minutes
+	 
+	    tmp = Math.floor((tmp-diff.min)/60);    // Nombre d'heures (entières)
+	    diff.hour = tmp % 24;                   // Extraction du nombre d'heures
+	     
+	    tmp = Math.floor((tmp-diff.hour)/24);   // Nombre de jours restants
+	    diff.day = tmp;
+	     
+	    return diff;
+	}	
 	function chercheInt(nom){
 		for(var i=0; i < nbInt; i++){
 			if(dataInt[i]["Nom"]==nom) return dataInt[i];		
