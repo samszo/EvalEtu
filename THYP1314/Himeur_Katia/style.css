@@ -1,0 +1,61 @@
+
+table td{
+    border: 1px black solid;
+    width: 130px;
+}
+
+table td.horaire
+{
+    width: 30 px;
+}
+
+table
+{
+   /* width: 600px;*/
+}
+
+
+
+.gris1
+{
+    background: #d9d9d9;
+}
+
+.gris2
+{
+    background: #bdbdbd;
+}
+
+.violet
+{
+    background: #9e9ac8;
+}
+
+.orange
+{
+    background: #fdae6b;
+}
+
+.bleu1
+{
+    background: #9ecae1;
+}
+
+.bleu2
+{
+    
+}
+
+.vert1
+{
+    
+}
+
+.vert2
+{
+    
+}
+
+table{
+    border-spacing: 0px ;
+}
