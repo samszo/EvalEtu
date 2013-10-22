@@ -11,11 +11,9 @@
             <h1>Planning CDNL 2013 - 2014 </h1>
         <?php
             
-            $filePathLine = "https://docs.google.com/spreadsheet/pub?key=0AgsnhwdtLOYEdEZmcW9nak9GZjRJRU12NEwydVdKUWc&output=csv";
             $filePath = "csv.csv";
                     
-                    $handle = fopen($filePath, "r+");
-                    $content = fread($handle, filesize($filePath));
+                    $content = file($filePath);
                     $lines = explode("\n", $content);
                     $i = 0;
                     foreach ($lines as $line)
