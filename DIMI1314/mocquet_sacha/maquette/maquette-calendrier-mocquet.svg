@@ -147,9 +147,9 @@
 	<line fill="none" stroke="#1D1D1D" stroke-width="4" stroke-miterlimit="10" x1="14.75" y1="35" x2="54.75" y2="35"/>
 	<line fill="none" stroke="#1D1D1D" stroke-width="4" stroke-miterlimit="10" x1="14.75" y1="51" x2="54.75" y2="51"/>
 	<text transform="matrix(1 0 0 1 215 39)" fill="#7A7979" font-family="'Verdana'" font-size="16">Rechercher dans le calendrier...</text>
-	<text id="dateJour" transform="matrix(1 0 0 1 535.4014 165.4922)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">10 / 2013</text>
-	<text transform="matrix(1 0 0 1 474.0566 165.4922)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">&lt;</text>
-	<text transform="matrix(-1 0 0 -1 799.7754 142.3208)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">&lt;</text>
+	<text id="dateMois" transform="matrix(1 0 0 1 535.4014 165.4922)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">10 / 2013</text>
+	<text onclick="precMois()" transform="matrix(1 0 0 1 474.0566 165.4922)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">&lt;</text>
+	<text onclick="suivMois()" transform="matrix(-1 0 0 -1 799.7754 142.3208)" fill="#FCC744" font-family="'Verdana-Bold'" font-size="36">&lt;</text>
 	<rect x="841.652" y="0.031" fill="#FCC744" width="97.264" height="70"/>
 	<rect x="939.15" y="0.031" fill="#FCC744" width="143.516" height="70"/>
 	<rect x="1082.9" y="0.031" fill="#FCC744" width="101.6" height="70"/>
