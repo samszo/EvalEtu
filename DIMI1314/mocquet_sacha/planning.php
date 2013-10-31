@@ -4,13 +4,12 @@
 	    <title>Planning CDNL 2013 - 2014</title> 
 		<meta charset="utf-8" />
 		<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
-		<link type="text/css" href="css/planning.css" rel="stylesheet" />
-	    <script type="text/javascript" src="js/d3.js"></script>
-		<script type="text/javascript" src="js/gantt-chart-d3.js"></script>	    
+		<link type="text/css" href="../../css/planning.css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../js/d3.js"></script>
+		<script type="text/javascript" src="../../js/gantt-chart-d3.js"></script>	    
 	</head> 
   <body> 
     <h1>Planning CDNL 2013 - 2014</h1>
-    
     
     <div id="tabType"></div>
     <div id="tabCou"></div>
@@ -20,9 +19,9 @@
     
     <script id='script'>
     var largeTot=200;
-	var urlCou = "data/PlanningCDNL13-14_2.csv";
-	var urlInt = "data/PlanningCDNL13-14_1.csv";
-	var urlCal = "data/PlanningCDNL13-14_0.csv";
+	var urlCou = "../../data/PlanningCDNL13-14_2.csv";
+	var urlInt = "../../data/PlanningCDNL13-14_1.csv";
+	var urlCal = "../../data/PlanningCDNL13-14_0.csv";
 	var dataCal, dataCou, dataInt;
 	
 	var nbCal;
@@ -104,10 +103,13 @@
 			cell.append("h4")
 			    .text(dInt[0]["Civilité"]+" "+dInt[0]["Nom"]);
 			cell.append("h5")
-			    .text("lieu : "+d["Lieu"+type]);
+			    .text("Lieu : "+d["Lieu"+type]);
 			
 		}				
 	}
+	
+	
+	
 			
 
 	function creaTableSemaine(id, nw, jw, dt){
@@ -121,7 +123,7 @@
 			dt = AddDays(dt, -jw+1);			
 		}
 		d3.select("#divWeeks")
-			.append("h2")
+			.append("h3")
 		    .text("Semaine "+nw+" du "+dateTitre(dt)+" au "+dateTitre(dtFin));
 
 		//création du tableau des cours
