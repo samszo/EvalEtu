@@ -9,6 +9,15 @@
 d3.xml("maquette/proposition_planning.svg", "image/svg+xml", function(xml) {
   document.body.appendChild(xml.documentElement);
 });
++	d3.xml("maquette/proposition_planning.svg", "image/svg+xml", function(xml) {
++		//place le document svg dans lme body de la page html
++		document.body.appendChild(xml.documentElement);
++		//r?cup?re la balise texte ? modifier
++		var eDateJour = document.getElementById("dateJour");
++		//change la valeur de la balise texte
++		eDateJour.textContent = "Juin 2016";
++	});
+
 
     </script>
   </body>
