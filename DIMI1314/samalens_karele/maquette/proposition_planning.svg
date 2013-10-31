@@ -8,7 +8,7 @@
 	<polygon clip-path="url(#SVGID_2_)" fill="#8AB3D2" points="210.454,591.973 421.909,225.724 633.363,591.973 	"/>
 	<g clip-path="url(#SVGID_2_)">
 		<rect x="133.419" y="191" fill="none" width="154.07" height="36"/>
-		<text transform="matrix(1 0 0 1 133.4189 216.1597)" font-family="'ITCAvantGardeStd-XLtCn'" font-size="34">NOVEMBRE</text>
+		<text id="mois" transform="matrix(1 0 0 1 133.4189 216.1597)" font-family="'ITCAvantGardeStd-XLtCn'" font-size="34">NOVEMBRE</text>
 	</g>
 	<rect x="328.113" y="187.797" clip-path="url(#SVGID_2_)" fill="#EE726A" width="36.111" height="6.019"/>
 	<rect x="328.113" y="199.166" clip-path="url(#SVGID_2_)" fill="#EE726A" width="36.111" height="6.019"/>
@@ -19,11 +19,11 @@
 		376.619,304.167 376.619,269.098 	"/>
 	<g clip-path="url(#SVGID_2_)">
 		<rect x="95.124" y="285.597" fill="none" width="232.99" height="91.496"/>
-		<text transform="matrix(1 0 0 1 169.3447 304.0972)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'ITCAvantGardeStd-MdCn'" font-size="25">9h - 12h</tspan><tspan x="-7.351" y="30" fill="#FFFFFF" font-family="'ITCAvantGardeStd-XLtCn'" font-size="25">Algorithme</tspan><tspan x="-8.9" y="60" fill="#FFFFFF" font-family="'ITCAvantGardeStd-XLtCn'" font-size="25">Salle G200</tspan></text>
+		<text transform="matrix(1 0 0 1 169.3447 304.0972)"><tspan id="heure" x="0" y="0" fill="#FFFFFF" font-family="'ITCAvantGardeStd-MdCn'" font-size="25">9h - 12h</tspan><tspan id="cours" x="-7.351" y="30" fill="#FFFFFF" font-family="'ITCAvantGardeStd-XLtCn'" font-size="25">Algorithme</tspan><tspan id="salle" x="-8.9" y="60" fill="#FFFFFF" font-family="'ITCAvantGardeStd-XLtCn'" font-size="25">Salle G200</tspan></text>
 	</g>
 	<g clip-path="url(#SVGID_2_)">
 		<rect x="130.419" y="233.1" fill="none" width="173.194" height="32.998"/>
-		<text transform="matrix(1 0 0 1 130.4189 258.2598)" font-family="'ITCAvantGardeStd-BkCn'" font-size="34">Vendredi 1er</text>
+		<text id="jour" transform="matrix(1 0 0 1 130.4189 258.2598)" font-family="'ITCAvantGardeStd-BkCn'" font-size="34">Vendredi 1er</text>
 	</g>
 	<line clip-path="url(#SVGID_2_)" x1="45.454" y1="223.723" x2="375.454" y2="223.723"/>
 	<g clip-path="url(#SVGID_2_)">
@@ -32,7 +32,7 @@
 	</g>
 	<g clip-path="url(#SVGID_2_)">
 		<rect x="287.489" y="553.328" fill="none" width="173.194" height="32.998"/>
-		<text transform="matrix(1 0 0 1 287.4893 578.4883)" font-family="'ITCAvantGardeStd-XLtCn'" font-size="34">Vendredi 1er</text>
+		<text id="jour" transform="matrix(1 0 0 1 287.4893 578.4883)" font-family="'ITCAvantGardeStd-XLtCn'" font-size="34">Vendredi 1er</text>
 	</g>
 </g>
 <circle fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" cx="328.191" cy="624.76" r="10.71"/>
