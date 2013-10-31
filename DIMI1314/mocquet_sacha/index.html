@@ -6,9 +6,16 @@
   <body>
     <script type="text/javascript">
 
-d3.xml("maquette/maquette-calendrier-mocquet.svg", "image/svg+xml", function(xml) {
-  document.body.appendChild(xml.documentElement);
-});
+	//charge un fichier svg externe
+	d3.xml("maquette/maquette-calendrier-mocquet.svg", "image/svg+xml", function(xml) {
+		//place le document svg dans lme body de la page html
+		document.body.appendChild(xml.documentElement);
+		//récupère la balise texte à modifier
+		var eDateJour = document.getElementById("dateJour");
+		//change la valeur de la balise texte
+		eDateJour.textContent = "Juin 2016";
+	});
+	
 
     </script>
   </body>
