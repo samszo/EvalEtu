@@ -63,14 +63,14 @@ function formatage_des_donnees($week, $array, $data) {
 	if(array_key_exists(get_year($data['date']), $array)){
 		if(array_key_exists($week, $array[get_year($data['date'])])){
 			if(array_key_exists(heure_du_cours($data['hd']), $array[get_year($data['date'])][$week])){
-				if(array_key_exists(jour_du_cours($data['date']), $array[get_year($data[date])][$week][heure_du_cours($data['hd'])])){
+				if(array_key_exists(jour_du_cours($data['date']), $array[get_year($data['date'])][$week][heure_du_cours($data['hd'])])){
 					$array[get_year($data['date'])][$week][heure_du_cours($data['hd'])][jour_du_cours($data['date'])] = $data;
 				}	
 			}
 		} else {
 			$array[get_year($data['date'])][$week] = array();
 			for($i = 0; $i < 3; $i++){
-				$array[get_year($data[date])][$week][$i] = array();
+				$array[get_year($data['date'])][$week][$i] = array();
 				for($j = 0; $j < 5; $j++){
 					$array[get_year($data['date'])][$week][$i][$day[$j]] = ($week == numero_de_semaine($data['date']) && $i == heure_du_cours($data['hd']) && $day[$j] == jour_du_cours($data['date'])) ? $data : array();
 				}
@@ -81,7 +81,7 @@ function formatage_des_donnees($week, $array, $data) {
 		for($i = 0; $i < 3; $i++){
 			$array[get_year($data['date'])][$week][$i] = array();
 			for($j = 0; $j < 5; $j++){
-				$array[get_year($data['date'])][$week][$i][$day[$j]] = ($week == numero_de_semaine($data['date']) && $i == heure_du_cours($data['hd']) && $day[$j] == jour_du_cours($data[date])) ? $data : array();
+				$array[get_year($data['date'])][$week][$i][$day[$j]] = ($week == numero_de_semaine($data['date']) && $i == heure_du_cours($data['hd']) && $day[$j] == jour_du_cours($data['date'])) ? $data : array();
 			}
 		}
 	}
