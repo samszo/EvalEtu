@@ -1,5 +1,6 @@
 <?php
 function generate_file_js($data){
+    $document = "";
     $filename = 'pagination.js';
     if (file_exists($filename)) unlink($filename);
     while(($current = current($data)) !== FALSE){
@@ -19,6 +20,7 @@ function generate_file_js($data){
 }
 
 function generate_file_css($data){
+    $css = "";
     $filename = 'fresh.css';
     if (file_exists($filename)) unlink($filename);
     while(($current = current($data)) !== FALSE){

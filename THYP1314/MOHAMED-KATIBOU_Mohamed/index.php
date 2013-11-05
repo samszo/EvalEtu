@@ -42,7 +42,7 @@ $data = transformation_des_donnees(recuperation_des_donnees("edt.csv", array()))
 	   </tr>
 	  </thead>
 	  <tbody>
-	   <?php $weekdata = $yeardata[key($yeardata)]; while ( ($current = current($weekdata)) !== FALSE ) { $c = 1 - $c; ?>
+	   <?php $weekdata = $yeardata[key($yeardata)]; while ( ($current = current($weekdata)) !== FALSE ) { $c=0; $c = 1 - $c; ?>
 	    <tr class="<?php print $colors[$c]; ?>">
 	     <?php $daydata = $weekdata[key($weekdata)]; while ( ($current = current($daydata)) !== FALSE ) { ?>
 	      <td class="<?php print key($yeardata); ?>_">
