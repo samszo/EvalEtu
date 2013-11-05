@@ -1,0 +1,142 @@
+html, body, #wrapper {
+    height: 100%;
+    margin: 10px;
+    width: 100%;
+}
+
+body {
+    font: 14px Helvetica Neue;
+    text-rendering: optimizelegibility;
+}
+
+table {
+    border: 2px solid #6495ED;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #EFF6FF;
+    border: 1px dotted #6495ED;
+    font-family: monospace;
+    padding: 5px;
+}
+
+.date {
+    border: 0px solid #6495ED;
+    font-family: sans-serif;
+    padding: 3px;
+    text-align: left;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.td9h {
+    border: 2px solid #6495ED;
+	background-color:#EFF6FF;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: top;    
+	height:100px;
+    cursor:pointer;
+}
+
+.td12h {
+    border: 2px solid #6495ED;
+	background-color:#EFF18F;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: top;    
+	height:100px;
+    cursor:pointer;
+}
+.td15h {
+    border: 2px solid #6495ED;
+	background-color:#E899FF;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: top;
+   
+	height:100px;
+    cursor:pointer;
+}
+
+.td_img_Etudiant {
+	border: 0px solid #6495ED;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: top;
+    width:100px;
+    cursor:pointer;
+	}
+
+.td_info_Etudiant {
+	border: 0px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    width:400px;
+    cursor:pointer;
+	}
+	
+.td_bouton {
+	border: 0px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    width:500px;
+    cursor:pointer;
+	}
+
+	
+.bouton_appel {
+margin-right:30px;
+margin-left:30px;
+}
+
+
+
+
+#studentsInfo{
+    background: none repeat scroll 0 0 #EEEEFF;
+    bottom: 600px;
+    left: 25%;
+    position: relative;
+    width: 500px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#studentsInfo h2{
+    text-align: center;
+}
+
+.photo{
+    padding:5px;
+    height: 235px;
+}
+
+
+.photo img{
+    border:1px solid white;
+    border-radius: 5px;
+  }
+
+.diagramme{
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 232px;
+    height: 150px;
+    left: 108px;
+    position: relative;
+    width: 315px;
+}
+
+#hideBlock{
+    bottom: 5px;
+    left: 158px;
+    position: relative;
+}
+
+#headBlock{
+    width:180px;
+    margin-left:auto;
+    margin-right: auto;

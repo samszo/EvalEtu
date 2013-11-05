@@ -1,0 +1,133 @@
+/* 
+    Document   : style
+    Created on : 14 oct. 2013, 23:29:02
+    Author     : geralodin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+html, body, #wrapper {
+    height: 100%;
+
+    width: 100%;
+}
+
+body {
+    font: 14px Helvetica Neue;
+    text-rendering: optimizelegibility;
+}
+
+table {
+    border: 2px solid #7198cc;
+}
+
+th {
+    background-color: #7198cc;
+	border: 1px solid #000000;
+    font-family: monospace;
+    padding: 5px;
+}
+
+.tdH {
+    border: 1px solid #000000;
+	background-color: #7198cc;
+    font-family: sans-serif;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.tdC {
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: top;
+    width: 176px;
+    cursor:pointer;
+	
+}
+
+.lundi {
+    background-color: #24490A;
+	height:150px;
+    padding: 6px;
+}
+
+.lundi:hover{
+ background-color: #c7fba9;
+}
+
+
+.mardi {
+    background-color: #FFEA05;
+	height:150px;
+    padding: 6px;
+}
+
+.mardi:hover{
+ background-color: #f9f587;
+}
+
+
+.mercredi {
+    background-color: #ba0c16;
+    fill: #ba0c16;
+	height:150px;
+    padding: 6px;
+}
+
+.mercredi:hover{
+	background-color: #f90403;
+}
+
+.jeudi {
+    background-color: #7198cc;
+    fill: #7198cc;
+	height:150px;
+	padding: 6px;
+}
+
+.vendredi {
+    background-color: #7198cc;
+    fill: #7198cc;
+	height:150px;
+	padding: 6px;
+}
+
+#studentsInfo h2{
+    text-align: center;
+}
+
+.photo{
+    padding:5px;
+    height: 235px;
+}
+
+.photo img{
+    border:1px solid white;
+    border-radius: 5px;
+    width:100px;
+    height: 150px;
+}
+
+.diagramme{
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 232px;
+    height: 150px;
+    left: 108px;
+    position: relative;
+    width: 315px;
+}
+
+#hideBlock{
+    bottom: 5px;
+    left: 158px;
+    position: relative;
+}
+
+#headBlock{
+    width:180px;
+    margin-left:auto;
+    margin-right: auto;
+}
