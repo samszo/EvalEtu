@@ -9,7 +9,7 @@ include_once 'index1.php';
 <html>
     <head>
         <title>Planning CDNL 2013 - 2014</title>
-           <meta charset="utf-8" />
+           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
             <link type="text/css" href="style.css" rel="stylesheet" />
             <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     </head>
@@ -53,7 +53,7 @@ include_once 'index1.php';
 	  <div onClick="setcours('<?php echo $v;?>');" >
 	   <?php
 	 echo("<h3>".$cours_t[$i]->unite ),"</h3>";
-	  echo('<h5>'.$cours_t[$i]->objet ),"</h5>";
+	 echo('<h5>'.utf8_encode($cours_t[$i]->objet) ),"</h5>";     
 	 echo('<h4>'.$cours_t[$i]->intervenant ),"</h4>";
 	  echo('<h5>'.$cours_t[$i]->lieu ),"</h5>";
 		 	echo( "</div>  ");
