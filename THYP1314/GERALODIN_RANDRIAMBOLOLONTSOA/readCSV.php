@@ -1,6 +1,7 @@
 <?php
 include_once 'Cours.php';
 include_once 'CoursCategorie.php';
+
 $fichier = "katCsv.csv";
 $fic = fopen($fichier, 'rb');
 $cpt = 0;
