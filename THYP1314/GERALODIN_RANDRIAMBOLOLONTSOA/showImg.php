@@ -50,7 +50,7 @@ if (isset($handle) && !empty($handle)) {
 <?php 
 foreach($personne as $p){ ?>
     <div class="photo">
-        <img <?php echo $p->img;?>
+        <img <?php echo $p->img;?>/>
         <p> Nom :</p>
         <p> Prenom :</p>
         <div class="diagramme">
