@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+d3.xml("maquette/proposition_planning.svg", "image/svg+xml", function(xml) {
+  document.body.appendChild(xml.documentElement);
+});
++	d3.xml("maquette/proposition_planning.svg", "image/svg+xml", function(xml) {
++		//place le document svg dans lme body de la page html
++		document.body.appendChild(xml.documentElement);
++		//r?cup?re la balise texte ? modifier
++		var eDateJour = document.getElementById("dateJour");
++		//change la valeur de la balise texte
++		eDateJour.textContent = "Juin 2016";
++	});
+
+
+    </script>
+  </body>
+</html>

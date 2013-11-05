@@ -2,18 +2,7 @@ html,body,#wrapper {
 	width: 100%;
 	height: 100%;
 	margin: 10px;
-	color: #777777;
 }
-
-#divWeeks, h3, table{
-	margin: 0 auto;
-	text-align: center;	
-}
-
-h3:first-child, #sem13_37{
-	display: none;
-}
-
 path {
   fill: steelblue;
 }
@@ -89,7 +78,7 @@ path {
 }
 .UE3-EC1 {
 	fill: #31a354;
-	background-color:#59c179;
+	background-color:#31a354;
 	padding:6px;
 }
 .UE3-EC2 {
@@ -154,27 +143,29 @@ path {
 	padding:6px;
 }
 
+
 table {
-	border:1px solid #E3E3E3;
+	border:3px solid #6495ed;
 	border-collapse:collapse;
 }
 thead, tfoot {
 	background-color:#D0E3FA;
-	border:1px solid #000;
+	border:1px solid #6495ed;
 }
 tbody {
 	background-color:#FFFFFF;
 	border:1px solid #6495ed;
 }
 th {
-	border:1px solid #777;
+	font-family:monospace;
+	border:1px dotted #6495ed;
 	padding:5px;
-	background-color:#efefef;
+	background-color:#EFF6FF;
 }
 .tdH {
 	vertical-align:middle;
 	font-family:sans-serif;
-	border:1px solid #E3E3E3;
+	border:2px solid #6495ed;
 	padding:3px;
 	text-align:left;
 	width:60px;
@@ -184,8 +175,9 @@ th {
 	font-family:sans-serif;
 	text-align:left;
 	width:176px;
-	border:1px solid #E3E3E3;
+	border:2px solid #6495ed;
 }
 caption {
 	font-family:sans-serif;
 }
+

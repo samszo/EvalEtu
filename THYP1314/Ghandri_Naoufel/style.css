@@ -1,0 +1,139 @@
+/* 
+    Document   : style
+    Created on : 14 oct. 2013, 23:29:02
+    Author     : geralodin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+html, body, #wrapper {
+    height: 100%;
+    margin: 10px;
+    width: 100%;
+}
+
+body {
+    font: 14px Helvetica Neue;
+    text-rendering: optimizelegibility;
+}
+
+table {
+    border: 3px solid #000000;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #7198cc;
+    border: 1px double #000000;
+    font-family: monospace;
+    padding: 5px;
+}
+
+.tdH {
+    border: 2px solid #000000;
+    font-family: sans-serif;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    width: 80px;
+}
+
+.tdC {
+    border: 2px solid #000000;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    width: 176px;
+
+    cursor:pointer;
+	
+}
+
+.UE1-EC2 {
+    background-color: #9ECA00;
+    fill: #9ECAE1;
+	height:150px;
+    padding: 4px;
+}
+
+.UE1-EC2:hover{
+ background-color: #c7fba9;
+}
+
+
+
+.UE3-EC4 {
+    background-color: #ff9f0c;
+    fill: #9ECAE1;
+	height:146px;
+    padding: 6px;
+}
+
+.UE3-EC4:hover{
+ background-color: #f9f587;
+}
+
+
+
+.UE4-EC1 {
+    background-color: #ba0c16;
+    fill: #BDBDBD;
+	height:146px;
+    padding: 6px;
+}
+
+.UE4-EC1:hover{
+	background-color: #f90403;
+}
+
+.UE4-EC2 {
+    background-color: #ff9f0c;
+    fill: #D9D9D9;
+	height:146px;
+    padding: 10px;
+}
+
+.UE4-EC2 :hover{
+	background-color: #f9f587;
+}
+
+
+
+#studentsInfo h2{
+    text-align: center;
+}
+
+.photo{
+    padding:5px;
+    height: 235px;
+}
+
+
+.photo img{
+    border:1px solid white;
+    border-radius: 5px;
+    width:100px;
+    height: 150px;
+}
+
+.diagramme{
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 232px;
+    height: 150px;
+    left: 108px;
+    position: relative;
+    width: 315px;
+}
+
+#hideBlock{
+    bottom: 5px;
+    left: 158px;
+    position: relative;
+}
+
+#headBlock{
+    width:180px;
+    margin-left:auto;
+    margin-right: auto;
+}

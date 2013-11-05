@@ -1,0 +1,70 @@
+html, body {
+    margin: 10px;
+}
+table {
+    border: 3px solid #6495ED;
+}
+thead, tfoot {
+    background-color: #D0E3FA;
+    border: 1px solid #6495ED;
+}
+th {
+    background-color: #EFF6FF;
+    border: 1px dotted #6495ED;
+    font-family: monospace;
+    padding: 10px;
+    width: 140px;
+}
+td {
+    border: 1px solid #6495ED;
+    font-family: monospace;
+    height: 130px;
+    padding: 10px;
+    text-align: center;
+    width: 140px;
+}
+h1 {
+    margin: 10px 0;
+}
+h2 {
+    font-family: monospace;
+    margin: 20px 0 4px;
+    padding: 0;
+}
+p {
+    height: 15px;
+    margin: 2px 0;
+}
+.cours {
+    font-size: 10px;
+    font-style: italic;
+    height: 40px;
+    margin: 5px 0; 
+}
+.salle {
+    font-weight: bold;
+}
+.hdf {
+    font-size: 10px;
+}
+.profs {
+    font-weight: bold;
+}
+.C1 {
+    background-color: #BFBFB1;
+}
+.C2 {
+    background-color: #FDD0A2;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+}
+#content-area {
+    float: left;
+    width: 67%;
+}
+#content-right {
+    float: right;
+    width: 33%;
+}
