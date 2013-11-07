@@ -89,8 +89,8 @@ th {
 
 	
 .bouton_appel {
-margin-right:30px;
-margin-left:30px;
+margin-right:20px;
+margin-left:20px;
 }
 
 
@@ -99,9 +99,9 @@ margin-left:30px;
 #studentsInfo{
     background: none repeat scroll 0 0 #EEEEFF;
     bottom: 600px;
-    left: 25%;
+    left: 1%;
     position: relative;
-    width: 500px;
+    width: 1400px;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
@@ -133,7 +133,7 @@ margin-left:30px;
 #hideBlock{
     bottom: 5px;
     left: 158px;
-    position: relative;
+    position: center;
 }
 
 #headBlock{
