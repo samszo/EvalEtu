@@ -1,31 +1,23 @@
 
- $(function() {
+function () {
+	$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/y' }).val();
+	alert('youhou');
+};
+
+ function traiterdate () {
+
+$( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/y' }).val();
 
 
 
- 	
-var dateddmmyy = $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/y'  }).val();
+alert('youhou');
 
-
-
-
-});
-
-
-
-
-function traiterdate () {
-
-
-
-
-var dateddmmyy = $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/y' }).val();
 
 jour = dateddmmyy.substr(0,2)
 mois = dateddmmyy.substr(3,2)
 annee = dateddmmyy.substr(6,2)
 
-/*alert(jour);
+/* alert(jour);
 alert(mois);
 alert(annee);
 alert(dateddmmyy); */
@@ -40,12 +32,9 @@ semainechaine = '"'+semaine+'"';
 semaineronde = semainechaine.substr(1,2);
 // alert(semaineronde);
 semainescrollto = "'" + "#" + "sem" + annee + '_' + semaineronde + "'";
-// alert(scrollto);
-
-
-
-
+alert(semainesscrollto);
 };
+
 
  
 
@@ -54,7 +43,7 @@ semainescrollto = "'" + "#" + "sem" + annee + '_' + semaineronde + "'";
 
 
 
-var el = $('body');
+/* var el = $('body');
 var search = aujourdhui;
 var replace = '<p id="bleu">' + search + '</p>';
 var text = el.html();
@@ -62,18 +51,11 @@ var text = el.html();
 text = text.split(search).join(replace);
 
 $('body').html(text);
+*/
 
 
 
 
-};
-
-
-function scrollto () {
-	$("html, body").animate({ scrollTop: $('#sem13_45').offset().top }, 1000, "easeInOutQuint");
-
-
-};
 
 
 // .offset().top 
