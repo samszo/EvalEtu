@@ -1,0 +1,64 @@
+<htmL>
+
+<head>
+<meta charset="UTF-8">
+
+ <style>
+.present {
+	padding: 10px;
+	background-color: #EE3333;
+	display: inline-block;
+}
+.absent {
+	padding: 10px;
+	background-color: #33EE33;
+	display: inline-block;
+}
+
+
+ </style>
+
+	<script type="text/javascript">
+
+	function alerthervepresent () {
+		alert('Hervé est présent')
+
+	};
+		function alertherveabsent () {
+		alert('Hervé est absent')
+
+	};
+		function alertdenispresent () {
+		alert('Denis est présent')
+
+	};
+		function alerdenisabsent () {
+		alert('Denis est absent')
+
+	};
+		function alertadolfpresent () {
+		alert('Adolf est présent')
+
+	};
+		function alertadolfabsent () {
+		alert('Adolf est absent')
+	};
+
+
+	</script>
+</head>
+<body>
+
+
+
+<div onClick="">Hervé Durand</div><div class="present" onClick="alerthervepresent ()">Présent</div>
+<div onClick="alertherveabsent ()" class="absent">Absent</div>
+<div onClick="">Denis Jacob</div><div class="present" onClick="alertdenispresent ()">Présent</div>
+<div class="absent" onClick="alertdenisabsent ()">Absent</div>
+<div onClick="">Adolf Gluten</div><div class="present" onClick="alertadolfpresent ()">Présent</div>
+<div class="absent" onClick="alertadolfabsent ()">Absent</div>
+
+
+</body>
+
+</html>
