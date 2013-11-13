@@ -1,0 +1,45 @@
+<htmL>
+
+<head>
+<meta charset="UTF-8">
+
+ <style>
+.absent {
+	padding: 10px;
+	background-color: #EE3333;
+	display: inline-block;
+}
+.present {
+	padding: 10px;
+	background-color: #33EE33;
+	display: inline-block;
+}
+
+
+ </style>
+
+	<script type="text/javascript">
+
+	function presence (action, nom) {
+		alert(nom + ' est ' + action)
+
+	};
+	
+
+	</script>
+</head>
+<body>
+
+
+
+<div onClick="">Hervé Durand</div><div class="present" onClick="presence ('présent','Hervé')">Présent</div>
+<div onClick="presence ('absent','Hervé')" class="absent">Absent</div>
+<div onClick="">Denis Jacob</div><div class="present" onClick="presence ('présent','Denis')">Présent</div>
+<div class="absent" onClick="presence ('absent','Denis')">Absent</div>
+<div onClick="">Adolf Gluten</div><div class="present" onClick="presence ('présent','Adolf')">Présent</div>
+<div class="absent" onClick="presence ('absent','Adolf')">Absent</div>
+
+
+</body>
+
+</html>
