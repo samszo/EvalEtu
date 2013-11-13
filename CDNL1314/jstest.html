@@ -3,12 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Insert title here</title>
-		<script type="text/javascript">
+		<script type="text/javascript">			
+			var message = 'bonjour ';
 			function ecrireBonjour(prenom){
 				//alert('bonjour '+prenom);
-				console.log('bonjour '+prenom);
+				console.log(message + prenom);
 			}
-			ecrireBonjour('scooby');
+			ecrireBonjour(message);
 		</script>
 	</head>
 	<body onload="ecrireBonjour('samy');" >
