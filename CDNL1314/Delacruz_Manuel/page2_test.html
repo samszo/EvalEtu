@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JavaScript Example</title>
+<title>JavaScript Exemple </title>
 
    <script>
-     function SayHello()
+     function EcrireBonjour(prenom)
      {
-       console.log('re-coucou')
-       alert("re-re-coucou");
+     	// commentaire en javascript
+
+       console.log(1+1);
+       // alert("re-re-coucou : " + prenom);
+       console.log('bonjour' + prenom);
      }
    </script>
    
 </head>
-<body onload="alert('coucou') ; " >
+<body onload="alert('coucou daphnee') ; " >
 
 <h1>mon premier exemple</h1>
 <p> du JavaScript test.</p>
 
    
-   <input type="button" value="Click me" onclick="SayHello()">
+   <input type="button" value="Click me" onclick="EcrireBonjour('samy')">
+
+
+   <div onmouseover="EcrireBonjour("SAMY"); " >SAMY </div>
+   <div onmouseover="EcrireBonjour("SCOOBY");" >SCOOBY </div>
+   <div onmouseover="EcrireBonjour("ZAPPA");" >ZAPPA </div>
+
 </body>
 </html>
