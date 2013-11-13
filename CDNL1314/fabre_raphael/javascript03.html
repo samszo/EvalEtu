@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 
  <style>
+#formulaire {
+ 	width:300px;
+ 	height:400px;
+ 	border-radius: 10px;
+ 	margin-top:50px;
+ 	padding:30px;
+ 	text-align: center;
+ 	margin-right: auto;
+ 	margin-left: auto;
+ 	background-color: #222222;
+ 	color:#FFF;
+
+ }
 .absent {
 	padding: 10px;
 	background-color: #EE3333;
@@ -13,6 +26,11 @@
 	padding: 10px;
 	background-color: #33EE33;
 	display: inline-block;
+}
+.bouton {
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px #000;
+	margin:10px;
 }
 
 
@@ -30,16 +48,16 @@
 </head>
 <body>
 
+<div id="formulaire">
 
+<div onClick="">Hervé Durand</div><div class="present bouton" onClick="presence ('présent','Hervé')">Présent</div>
+<div onClick="presence ('absent','Hervé')" class="absent bouton">Absent</div>
+<div onClick="">Denis Jacob</div><div class="present bouton" onClick="presence ('présent','Denis')">Présent</div>
+<div class="absent bouton" onClick="presence ('absent','Denis')">Absent</div>
+<div onClick="">Adolf Gluten</div><div class="present bouton" onClick="presence ('présent','Adolf')">Présent</div>
+<div class="absent bouton" onClick="presence ('absent','Adolf')">Absent</div>
 
-<div onClick="">Hervé Durand</div><div class="present" onClick="presence ('présent','Hervé')">Présent</div>
-<div onClick="presence ('absent','Hervé')" class="absent">Absent</div>
-<div onClick="">Denis Jacob</div><div class="present" onClick="presence ('présent','Denis')">Présent</div>
-<div class="absent" onClick="presence ('absent','Denis')">Absent</div>
-<div onClick="">Adolf Gluten</div><div class="present" onClick="presence ('présent','Adolf')">Présent</div>
-<div class="absent" onClick="presence ('absent','Adolf')">Absent</div>
-
-
+</div>
 </body>
 
 </html>
