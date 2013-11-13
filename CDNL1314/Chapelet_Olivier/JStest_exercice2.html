@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <title>exercice</title>
+
+        <script type="text/javascript">
+            function present(prenom){
+            alert(prenom+" est pas là");
+            };
+            function absent(prenom){
+            alert(prenom+" n'est pas là");
+            };
+            
+        </script>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            ecrireBonjour('wamwat');
+        </script>
+        <div onmouseover="ecrireBonjour()">A</div>
+            <img src="img/timeP.jpg" onclick="present('A')">
+            <img src="img/timeA.jpg" onclick="absent('A')">
+        <div onmouseover="ecrireAurevoir()">B</div>
+            <img src="img/timeP.jpg" onclick="present('B')">
+            <img src="img/timeA.jpg" onclick="absent('B')">
+        <div onmouseover="ecrireBonjour()">C</div>
+            <img src="img/timeP.jpg" onclick="present('C')">
+            <img src="img/timeA.jpg" onclick="absent('C')">
+    </body>
+</html>
