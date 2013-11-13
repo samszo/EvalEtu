@@ -5,22 +5,20 @@
 <title>JavaScript Exemple </title>
 <meta charset="utf-8" />
 
-   <script type="text/javascript">
+    <script>
+
            // creation du tableau en JSON  
            // entre [] c est des listes entre {} des objets
            //
-           // array fonctionne égalemement : var arrEtu = array('samy', 'scooby', 'daphne') ;
+           // en javascript: array, fonctionne égalemement
+           // var arrEtu = array('samy', 'scooby', 'daphne') ;
 
-           var arrEtu = array('samy', 'scooby', 'daphne') ;
-           
+           var arrEtuCDNL = [{nom:'sophie', sexe:'f', diplome:'CDNL1314'}   ,  {nom:'manuel', sexe:'m', diplome:'CDNL1314'} , 
+                             {nom:'jinjan', sexe:'f', diplome:'CDNL1314'}];
 
-
-   </script>
-
-   <script>
+  
      // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/page3_test.html
-     // variable globale  
-     // AFAIRE !!!!!!!!!!!!!!!!!!!!!
+     // OK 
 
       var message = 'bonjour' ;
 
@@ -50,11 +48,13 @@
         function showEtus (liste) {
            liste.forEach(function (etu) {
                    console.log(etu);
+                   console.log("nom = " + etu.nom);
            } )
 
         }
 
-        showEtus (arrEtu);
+        
+        showEtus (arrEtuCDNL);
 
 
    </script>
