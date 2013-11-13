@@ -11,13 +11,24 @@
 			}
 			ecrireBonjour(message);
 		</script>
+		<style type="text/css">
+			.etu{
+				width:300px;
+			}
+			.nom{
+				width:100px;
+			}
+			.icone{
+				vertical-align:middle;
+			}
+		</style>
 	</head>
 	<body onload="ecrireBonjour('samy');" >
 		<script type="text/javascript">
 			ecrireBonjour('daphné');
 		</script>
-		<div onmouseover="ecrireBonjour('SAMY');" >SAMY</div>
-		<div onmouseover="ecrireBonjour('SCOOBY');">SCOOBY</div>
-		<div onmouseover="ecrireBonjour('Zappa');">Zappa</div>
+		<div class="etu" onmouseover="ecrireBonjour('SAMY');" ><div class="nom">SAMY</div><img class="icone" src="../img/timeA.jpg" onclick="alert('SAMY est abscent');" /><img class="icone" src="../img/timeP.jpg" onclick="alert('SAMY est présent');" /></div>
+		<div class="etu" onmouseover="ecrireBonjour('SCOOBY');">SCOOBY<img class="icone" src="../img/timeA.jpg" onclick="alert('SCOOBY est abscent');" /><img class="icone" src="../img/timeP.jpg" onclick="alert('SCOOBY est présent');" /></div>
+		<div onmouseover="ecrireBonjour('Zappa');">Zappa<img class="icone" src="../img/timeA.jpg" onclick="alert('ZAPPA est abscent');" /><img class="icone" src="../img/timeP.jpg" onclick="alert('ZAPPA est présent');" /></div>
 	</body>
 </html>
