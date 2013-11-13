@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>JavaScript Exemple </title>
+<meta charset="utf-8" />
+
+   <script type="text/javascript">
+           // creation du tableau en JSON  
+           // entre [] c est des listes entre {} des objets
+           //
+           // array fonctionne égalemement : var arrEtu = array('samy', 'scooby', 'daphne') ;
+
+           var arrEtu = array('samy', 'scooby', 'daphne') ;
+           
+
+
+   </script>
+
+   <script>
+     // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/page3_test.html
+     // variable globale  
+     // AFAIRE !!!!!!!!!!!!!!!!!!!!!
+
+      var message = 'bonjour' ;
+
+     function EcrireBonjour(prenom)
+     {
+     	// commentaire en javascript
+
+
+       message +=  prenom;	
+
+       // alert(message);
+       console.log (message);
+
+       console.log(1+1);
+       // alert("re-re-coucou : " + prenom);
+       // console.log('bonjour' + prenom);
+
+     }
+
+     
+       function Ecrire(message)
+         {  
+     	     alert(message);
+         }
+
+
+        function showEtus (liste) {
+           liste.forEach(function (etu) {
+                   console.log(etu);
+           } )
+
+        }
+
+        showEtus (arrEtu);
+
+
+   </script>
+   
+</head>
+<body>
+
+<h1>mon premier exemple</h1>
+<p> du JavaScript test.</p>
+
+   
+   <input type="button" value="Click me" onclick="EcrireBonjour('samy')">
+
+
+   <div onmouseover="EcrireBonjour('SAMY') " >SAMY     
+
+        <img onclick="Ecrire('SAMY est present')" src="img/timeP.jpg" alt="Present"> 
+        <img onclick="Ecrire('SAMY est absent')" src="img/timeA.jpg" alt="Absent"> 
+    </div>
+
+   <div onmouseover="EcrireBonjour('SCOOBY')" >SCOOBY
+
+        <img onclick="Ecrire('SCOOBY est present')" src="img/timeP.jpg" alt="Present"> 
+        <img onclick="Ecrire('SCOOBY est absent')" src="img/timeA.jpg" alt="Absent"> 
+
+    </div>
+   <div onmouseover="EcrireBonjour('ZAPPA') " >ZAPPA 
+        <img onclick="Ecrire('ZAPPA est present')" src="img/timeP.jpg" alt="Present"> 
+        <img onclick="Ecrire('ZAPPA est absent')" src="img/timeA.jpg" alt="Absent"> 
+
+   </div>
+
+   
+   
+
+</body>
+</html>
