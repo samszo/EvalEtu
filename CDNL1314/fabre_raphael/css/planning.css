@@ -6,6 +6,10 @@ html,body,#wrapper {
 path {
   fill: steelblue;
 }
+#bleu {
+	color:#FFFFFF;
+	background-color: #0CF;
+}
 
 .axis path,
 .axis line {
