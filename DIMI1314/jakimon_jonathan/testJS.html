@@ -1,10 +1,60 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
+	<script type="application/javascript">
+		function coucou (prenom){
+			alert("Bonjour" +prenom);
+		}
+		function CouCou (prenom){
+			console.log("Bonjour" +prenom);
+		}
+	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>testJS</title>
 </head>
 
-<body onload="alert('coucou');console.log('re-coucou');"> 
+<body onload="coucou('watch');CouCou('tv')">
+<div onmouseover="CouCou('DEBUSSY')">DEBUSSY</div>
+<script type ="application/javascript">
+	CouCou("Zappa");
+	CouCou("Ravel");
+</script>
+
+<script type="application/javascript">
+	function coucou(prenom){
+		alert("Bonjour "+prenom);
+	}
+	function CouCou(prenom){
+		console.log("Bonjour "+prenom);
+	}
+
+	CouCou("Ravel");
+		
+	function ditLe(message){
+		var audioObj = document.createElement("audio");
+		audioObj.autoplay = "autoplay";
+
+		var sourceObj = document.createElement("source");
+		sourceObj.src = "alloZappa.mp3";
+		sourceObj.type= "audio/mpeg";
+		audioObj.appendChild(sourceObj);
+
+		document.body.appendChild(audioObj);	
+	}
+	
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TestJS</title>
+</head>
+<body onload="CouCou('moi');">
+
+<div onmouseover="CouCou('DEBUSSY');" >DEBUSSY</div>
+
+<script type="application/javascript">
+	CouCou("Zappa");
+	ditLe("Zappa");
+</script>
+
+
 </body>
 </html>
