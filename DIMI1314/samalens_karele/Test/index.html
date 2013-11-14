@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://rawgithub.com/hiddentao/google-tts/master/google-tts.min.js"></script>
+		<title>Un p'tit cours de javascript</title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/> 
+		<script type="text/javascript">
+			function coucou(prenom){
+				alert ("HI "+prenom);
+			}
+			function couCou(prenom){
+				console.log("SALUT "+prenom);
+			}
+
+		function ditLe(message){
+		var audioObj = document.createElement("audio");
+		audioObj.autoplay = "autoplay";
+
+		var sourceObj = document.createElement("source");
+		sourceObj.src = "everybody.mp3";
+		sourceObj.type= "audio/mpeg";
+		audioObj.appendChild(sourceObj);
+
+		document.body.appendChild(audioObj);
+		}	
+
+
+		</script>
+	</head>
+	<body onload="coucou('Karèle');couCou('autre');couCou('zappa');ditLe()">
+
+		<div onmouseover="ditLe()">DEBUSSY</div>
+
+		<script type="text/javascript">
+			couCou("toi");
+			ditLe("toi");
+		</script>
+
+	</body>
+</html>
