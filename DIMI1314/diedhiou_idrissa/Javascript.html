@@ -16,12 +16,27 @@
 
 <body onload="coucou(' toi');CouCou(' moi');">
 <script type="application/javascript">
-	CouCou ("Zappa") ;
-	CouCou ("Jojo") ;
+	CouCou ("Zappa");
+	CouCou ("Jojo");
+	
+		function ditLe(message){
+		var audioObj = document.createElement("audio");
+		audioObj.autoplay = "autoplay";
+
+		var sourceObj = document.createElement("source");
+		sourceObj.src = "iddyson.mp3";
+		sourceObj.type= "audio/mpeg";
+		audioObj.appendChild(sourceObj);
+
+		document.body.appendChild(audioObj);	
+		}
 </script>
 
 <div onmouseover="CouCou ('Iddy')">Iddy
 </div>
-
+<script type="application/javascript">
+ditLe ("iddyson")
+</script>
+	
 </body>
 </html>
