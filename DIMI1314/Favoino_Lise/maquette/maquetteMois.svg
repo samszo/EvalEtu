@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="641px"
+	 height="806px" viewBox="0 0 641 806" enable-background="new 0 0 641 806" xml:space="preserve">
+<g id="Fond">
+	
+		<radialGradient id="SVGID_1_" cx="320.5" cy="480.5" r="407.9215" gradientTransform="matrix(1 0 0 0.8385 0 0.0806)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.4182" style="stop-color:#F9F9FA"/>
+		<stop  offset="0.832" style="stop-color:#EEEFF0"/>
+		<stop  offset="1" style="stop-color:#E9E9EA"/>
+	</radialGradient>
+	<rect x="0.5" y="0.5" fill="url(#SVGID_1_)" stroke="#000000" stroke-miterlimit="10" width="640" height="805"/>
+</g>
+<g id="Jours" display="none">
+	<g id="Texte1" display="inline">
+		<rect x="73.989" y="303.656" fill="#ED1C24" width="101" height="45.901"/>
+		<text transform="matrix(1 0 0 1 84.2349 335.0825)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">10h - 13h</text>
+		<g>
+			<text transform="matrix(1 0 0 1 188.0654 321.8857)" font-family="'ArialMT'" font-size="21">Pratiques et technologies interactives</text>
+			<text transform="matrix(1 0 0 1 188.0654 321.8857)" font-family="'ArialMT'" font-size="21">Pratiques et technologies interactives</text>
+		</g>
+		<g>
+			<text transform="matrix(0.9367 0 0 1 188.0654 348.2788)" font-family="'ArialMT'" font-size="18">Intervenant : Yann Bonizec</text>
+			<text transform="matrix(0.9367 0 0 1 188.0654 348.2788)" font-family="'ArialMT'" font-size="18">Intervenant : Yann Bonizec</text>
+		</g>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="565.361,357.262 565.361,372.672 
+			549.951,372.672 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="557.656,349.557 557.656,364.967 
+			542.246,364.967 		"/>
+		<path fill="#EE1F3A" d="M569.406,322.23c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872c1.068,6.997-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H569.406z"/>
+	</g>
+	<g id="Texte_2" display="inline">
+		<rect x="73.323" y="422.644" fill="#ED1C24" width="101" height="45.901"/>
+		<text transform="matrix(1 0 0 1 85.7949 454.0708)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">14h - 16h</text>
+		<g>
+			<text transform="matrix(1 0 0 1 187.3369 440.874)" font-family="'ArialMT'" font-size="21">Communication graphique</text>
+			<text transform="matrix(1 0 0 1 187.3369 440.874)" font-family="'ArialMT'" font-size="21">Communication graphique</text>
+		</g>
+		<g>
+			<text transform="matrix(0.9367 0 0 1 187.3369 467.2671)" font-family="'ArialMT'" font-size="18">Intervenant : Guy Bilisko</text>
+			<text transform="matrix(0.9367 0 0 1 187.3369 467.2671)" font-family="'ArialMT'" font-size="18">Intervenant : Guy Bilisko</text>
+		</g>
+		<g>
+			<text transform="matrix(0.9367 0 0 1 73.3228 538.9678)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="16">Pour la prochaine séance : </tspan><tspan x="0" y="21.6" font-family="'ArialMT'" font-size="18">   </tspan><tspan x="15.003" y="21.6" font-family="'ArialMT'" font-size="13">Algoritmisation du svg</tspan><tspan x="0" y="37.2" font-family="'ArialMT'" font-size="13">   Intégrer le svg dans une page html :  </tspan><tspan x="0" y="52.8" font-family="'ArialMT'" font-size="13">   http://bl.ocks.org/mbostock/1014829</tspan><tspan x="0" y="68.4" font-family="'ArialMT'" font-size="13">   Rendre dynamique le svg</tspan><tspan x="0" y="84" font-family="'ArialMT'" font-size="13">   Repérer la balise à dynamiser</tspan><tspan x="0" y="99.6" font-family="'ArialMT'" font-size="13">   Ajouter un identifiant à cette balise : id=???</tspan><tspan x="0" y="115.2" font-family="'ArialMT'" font-size="13">   Sélectionner en javascript la balise</tspan><tspan x="0" y="130.8" font-family="'ArialMT'" font-size="13">   Modifier la valeur de la balise</tspan><tspan x="0" y="146.4" font-family="'ArialMT'" font-size="13">   Reproduire le même processus pour toute les balises  </tspan><tspan x="0" y="162" font-family="'ArialMT'" font-size="13">   dynamiques </tspan></text>
+			<text transform="matrix(0.9367 0 0 1 73.3228 538.9678)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="16">Pour la prochaine séance : </tspan><tspan x="0" y="21.6" font-family="'ArialMT'" font-size="18">   </tspan><tspan x="15.003" y="21.6" font-family="'ArialMT'" font-size="13">Algoritmisation du svg</tspan><tspan x="0" y="37.2" font-family="'ArialMT'" font-size="13">   Intégrer le svg dans une page html :  </tspan><tspan x="0" y="52.8" font-family="'ArialMT'" font-size="13">   http://bl.ocks.org/mbostock/1014829</tspan><tspan x="0" y="68.4" font-family="'ArialMT'" font-size="13">   Rendre dynamique le svg</tspan><tspan x="0" y="84" font-family="'ArialMT'" font-size="13">   Repérer la balise à dynamiser</tspan><tspan x="0" y="99.6" font-family="'ArialMT'" font-size="13">   Ajouter un identifiant à cette balise : id=???</tspan><tspan x="0" y="115.2" font-family="'ArialMT'" font-size="13">   Sélectionner en javascript la balise</tspan><tspan x="0" y="130.8" font-family="'ArialMT'" font-size="13">   Modifier la valeur de la balise</tspan><tspan x="0" y="146.4" font-family="'ArialMT'" font-size="13">   Reproduire le même processus pour toute les balises  </tspan><tspan x="0" y="162" font-family="'ArialMT'" font-size="13">   dynamiques </tspan></text>
+		</g>
+		<g>
+			<text transform="matrix(0.9367 0 0 1 73.9888 510.8691)" font-family="'ArialMT'" font-size="16">Description du cours en une ligne.</text>
+			<text transform="matrix(0.9367 0 0 1 73.9888 510.8691)" font-family="'ArialMT'" font-size="16">Description du cours en une ligne.</text>
+		</g>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="543.314,719.91 543.314,704.5 
+			558.725,704.5 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="551.02,727.615 551.02,712.205 
+			566.43,712.205 		"/>
+		<path fill="#EE1F3A" d="M568.678,441.955c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872c1.068,6.997-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H568.678z"/>
+	</g>
+	<g id="Layer_6" display="inline">
+		<circle fill="#ED1C24" cx="136.326" cy="99.144" r="61.763"/>
+		<circle fill="#AD1015" cx="128.868" cy="205.107" r="34.197"/>
+		<circle fill="#EE1F3A" cx="222.248" cy="163.226" r="34.182"/>
+		<text transform="matrix(1 0 0 1 85.7949 108.6768)" fill="#FFFFFF" font-family="'JustRealize'" font-size="41.9309">Jours</text>
+		<text transform="matrix(1 0 0 1 193.0889 170.9097)" fill="#FFFFFF" font-family="'JustRealize'" font-size="22.0347">Semaine</text>
+		<text transform="matrix(1 0 0 1 106.0889 214.1274)" fill="#FFFFFF" font-family="'JustRealize'" font-size="27.6381">Mois</text>
+		<rect x="331.5" y="38.181" fill="#ED1C24" width="237.17" height="47.93"/>
+		<rect x="350.257" y="47.161" fill="none" width="155.992" height="30.249"/>
+		<text transform="matrix(1 0 0 1 350.2568 76.6567)" fill="#FFFFFF" font-family="'JustRealize'" font-size="36">12/11/2013</text>
+		<g id="calendrier">
+			<rect x="523.784" y="42.671" fill="#FFFFFF" width="38.95" height="38.951"/>
+			<rect x="551.146" y="55.943" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="524.966" y="55.943" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="524.746" y="44.833" fill="#D1D3D4" width="36.587" height="8.109"/>
+			<rect x="537.837" y="55.943" fill="#D1D3D4" width="10.406" height="10.407"/>
+			<rect x="550.926" y="69.093" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="524.746" y="69.093" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="537.617" y="69.093" fill="#D1D3D4" width="10.406" height="10.407"/>
+		</g>
+	</g>
+</g>
+<g id="Semaine" display="none">
+	<g id="Ligne1" display="inline">
+		<rect x="72.686" y="272.541" fill="#ED1C24" width="152.375" height="45.901"/>
+		<text transform="matrix(1 0 0 1 82.9321 303.9673)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Lundi 11/11/2013</text>
+		<path display="none" fill="#EE1F3A" d="M568.104,291.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872c1.068,6.997-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H568.104z"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="564.059,326.147 564.059,341.557 
+			548.648,341.557 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="556.354,318.442 556.354,333.852 
+			540.943,333.852 		"/>
+	</g>
+	<g id="Ligne_2" display="inline">
+		<rect x="72.02" y="368.529" fill="#ED1C24" width="153.042" height="45.901"/>
+		<text transform="matrix(1 0 0 1 84.4922 399.9556)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Mardi 12/11/2013</text>
+		<g>
+			<text transform="matrix(0.9367 0 0 1 72.02 447.8521)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="16">10h - 13h : Pratiques et technologies innovantes</tspan><tspan x="0" y="19.2" font-family="'ArialMT'" font-size="16">                  Yann  Bonizec</tspan><tspan x="0" y="38.401" font-family="'ArialMT'" font-size="16">14h -16h : Communication Graphique</tspan><tspan x="0" y="57.6" font-family="'ArialMT'" font-size="16">                 Guy Bilisko </tspan></text>
+			<text transform="matrix(0.9367 0 0 1 72.02 447.8521)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="16">10h - 13h : Pratiques et technologies innovantes</tspan><tspan x="0" y="19.2" font-family="'ArialMT'" font-size="16">                  Yann  Bonizec</tspan><tspan x="0" y="38.401" font-family="'ArialMT'" font-size="16">14h -16h : Communication Graphique</tspan><tspan x="0" y="57.6" font-family="'ArialMT'" font-size="16">                 Guy Bilisko </tspan></text>
+		</g>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="545.864,522.449 545.864,507.039 
+			561.274,507.039 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="553.569,530.154 553.569,514.744 
+			568.979,514.744 		"/>
+		<path display="none" fill="#EE1F3A" d="M567.375,387.839c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872c1.068,6.997-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H567.375z"/>
+	</g>
+	<g id="Ligne_3" display="inline">
+		<rect x="72.686" y="550.541" fill="#ED1C24" width="182.375" height="45.9"/>
+		<text transform="matrix(1 0 0 1 82.9321 581.9668)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Mercredi 13/11/2013</text>
+		<path display="none" fill="#EE1F3A" d="M568.104,569.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H568.104z"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="564.059,604.146 564.059,619.557 
+			548.648,619.557 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="556.354,596.441 556.354,611.852 
+			540.943,611.852 		"/>
+	</g>
+	<g id="Line_4" display="inline">
+		<rect x="72.792" y="640.541" fill="#ED1C24" width="182.375" height="45.9"/>
+		<text transform="matrix(1 0 0 1 83.0376 671.9668)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Jeudi 14/11/2013</text>
+		<path display="none" fill="#EE1F3A" d="M568.209,659.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H568.209z"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="564.164,694.146 564.164,709.557 
+			548.754,709.557 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="556.459,686.441 556.459,701.852 
+			541.049,701.852 		"/>
+	</g>
+	<g id="Line_5" display="inline">
+		<rect x="72.792" y="726.984" fill="#ED1C24" width="182.375" height="45.9"/>
+		<text transform="matrix(1 0 0 1 83.0376 758.4102)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Vendredi 15/11/2013</text>
+		<path display="none" fill="#EE1F3A" d="M568.209,745.559c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+			c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+			c1.262,0,2.335-1.522,2.751-3.655H568.209z"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="564.164,780.59 564.164,796 548.754,796 
+					"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="556.459,772.885 556.459,788.295 
+			541.049,788.295 		"/>
+	</g>
+	<g id="rond" display="inline">
+		<circle fill="#AD1015" cx="135.462" cy="99.144" r="61.764"/>
+		<circle fill="#ED1C24" cx="128.004" cy="205.107" r="34.197"/>
+		<circle fill="#EE1F3A" cx="221.383" cy="163.226" r="34.182"/>
+		<text transform="matrix(1 0 0 1 78.9321 116.7363)" fill="#FFFFFF" font-family="'JustRealize'" font-size="41.9309">Semaine</text>
+		<text transform="matrix(1 0 0 1 194.2246 170.9097)" fill="#FFFFFF" font-family="'JustRealize'" font-size="22.0347">Jours</text>
+		<text transform="matrix(1 0 0 1 106.2246 214.1274)" fill="#FFFFFF" font-family="'JustRealize'" font-size="27.6381">Mois</text>
+	</g>
+	<g id="choix_semaine" display="inline">
+		<rect x="330.636" y="38.181" fill="#ED1C24" width="237.17" height="125.044"/>
+		<rect x="381.845" y="46.022" fill="none" width="155.992" height="30.249"/>
+		<text transform="matrix(1 0 0 1 381.8447 75.5181)" fill="#FFFFFF" font-family="'JustRealize'" font-size="36">11/11/2013</text>
+		<rect x="430.845" y="78.488" fill="none" width="44.745" height="30.249"/>
+		<text transform="matrix(1 0 0 1 430.8447 107.9839)" fill="#FFFFFF" font-family="'JustRealize'" font-size="36">au</text>
+		<rect x="377.857" y="122.919" fill="none" width="155.992" height="30.249"/>
+		<text transform="matrix(1 0 0 1 377.8574 152.415)" fill="#FFFFFF" font-family="'JustRealize'" font-size="36">17/11/2013</text>
+		<g id="calendrier_1_">
+			<rect x="522.48" y="118.568" fill="#FFFFFF" width="38.95" height="38.951"/>
+			<rect x="549.842" y="131.84" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="523.662" y="131.84" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="523.442" y="120.73" fill="#D1D3D4" width="36.587" height="8.109"/>
+			<rect x="536.533" y="131.84" fill="#D1D3D4" width="10.406" height="10.407"/>
+			<rect x="549.622" y="144.99" fill="#D1D3D4" width="10.407" height="10.407"/>
+			<rect x="536.313" y="144.99" fill="#D1D3D4" width="10.406" height="10.407"/>
+			<rect x="523.442" y="144.99" fill="#D1D3D4" width="10.407" height="10.407"/>
+		</g>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="549.517,82.716 560.575,93.449 
+			549.843,104.507 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="350.257,104.507 339.198,93.775 
+			349.931,82.716 		"/>
+	</g>
+</g>
+<g id="Mois">
+	<rect x="72.686" y="310.615" fill="#FFFFFF" width="496.292" height="453.885"/>
+	<rect x="72.686" y="272.541" fill="#ED1C24" width="496.292" height="45.901"/>
+	<path display="none" fill="#EE1F3A" d="M568.104,291.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+		c-3.205,0-9.08,0.875-8.012,7.872c1.068,6.997-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+		c1.262,0,2.335-1.522,2.751-3.655H568.104z"/>
+	<path display="none" fill="#EE1F3A" d="M568.104,569.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+		c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+		c1.262,0,2.335-1.522,2.751-3.655H568.104z"/>
+	<path display="none" fill="#EE1F3A" d="M568.209,659.115c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+		c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+		c1.262,0,2.335-1.522,2.751-3.655H568.209z"/>
+	<path display="none" fill="#EE1F3A" d="M568.209,745.559c0,0-5.875-4.879-4.273-9.655c1.604-4.776-2.136-9.655-5.34-9.655
+		c-3.205,0-9.08,0.875-8.012,7.872s-5.875,11.438-5.875,11.438h9.267c0.416,2.133,1.488,3.655,2.751,3.655
+		c1.262,0,2.335-1.522,2.751-3.655H568.209z"/>
+	<g id="head">
+		<circle fill="#AD1015" cx="135.462" cy="99.144" r="61.764"/>
+		<circle fill="#ED1C24" cx="128.004" cy="205.107" r="34.197"/>
+		<circle fill="#EE1F3A" cx="221.383" cy="163.226" r="34.182"/>
+		<text transform="matrix(1 0 0 1 104.9321 116.7363)" fill="#FFFFFF" font-family="'JustRealize'" font-size="41.9309">Mois</text>
+		<text transform="matrix(1 0 0 1 194.2246 170.9097)" fill="#FFFFFF" font-family="'JustRealize'" font-size="22.0347">Jours</text>
+		<text transform="matrix(1 0 0 1 98.2246 214.1274)" fill="#FFFFFF" font-family="'JustRealize'" font-size="21">Semaine</text>
+		<rect x="233.845" y="280.367" fill="none" width="155.992" height="30.249"/>
+		<text transform="matrix(1 0 0 1 233.8447 309.8628)" fill="#FFFFFF" font-family="'JustRealize'" font-size="36">Novembre</text>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="543.987,284.596 555.046,295.328 
+			544.313,306.387 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="93.807,306.387 82.749,295.654 
+			93.481,284.596 		"/>
+	</g>
+	<g id="Ligne_2_2_">
+		<rect x="72.354" y="407.653" fill="#F1F2F2" width="71.037" height="89.212"/>
+		<rect x="143.391" y="407.653" fill="#FFFFFF" width="71.037" height="89.212"/>
+		<rect x="214.428" y="407.653" fill="#F1F2F2" width="71.037" height="89.212"/>
+		<rect x="285.464" y="407.653" fill="#FFFFFF" width="71.037" height="89.212"/>
+		<rect x="356.502" y="407.653" fill="#F1F2F2" width="71.036" height="89.212"/>
+		<rect x="427.539" y="407.653" fill="#FFFFFF" width="71.036" height="89.212"/>
+		<rect x="497.61" y="407.653" fill="#F1F2F2" width="71.036" height="89.212"/>
+	</g>
+	<g id="ligne_4">
+		<rect x="72.354" y="584.653" fill="#F1F2F2" width="71.037" height="89.212"/>
+		<rect x="143.391" y="584.653" fill="#FFFFFF" width="71.037" height="89.212"/>
+		<rect x="214.428" y="584.653" fill="#F1F2F2" width="71.037" height="89.212"/>
+		<rect x="285.465" y="584.653" fill="#FFFFFF" width="71.036" height="89.212"/>
+		<rect x="356.502" y="584.653" fill="#F1F2F2" width="71.036" height="89.212"/>
+		<rect x="427.539" y="584.653" fill="#FFFFFF" width="71.036" height="89.212"/>
+		<rect x="497.61" y="584.653" fill="#F1F2F2" width="71.036" height="89.212"/>
+	</g>
+	<g id="Layer_23">
+		<rect x="72.354" y="673.865" fill="#FFFFFF" width="71.037" height="89.213"/>
+		<rect x="143.391" y="673.865" fill="#F1F2F2" width="71.037" height="89.213"/>
+		<rect x="214.428" y="673.865" fill="#FFFFFF" width="71.037" height="89.213"/>
+		<rect x="285.465" y="673.865" fill="#F1F2F2" width="71.036" height="89.213"/>
+		<rect x="356.502" y="673.865" fill="#FFFFFF" width="71.036" height="89.213"/>
+		<rect x="427.539" y="673.865" fill="#F1F2F2" width="71.036" height="89.213"/>
+		<rect x="497.61" y="673.865" fill="#FFFFFF" width="71.036" height="89.213"/>
+	</g>
+	<g id="Ligne_1">
+		<rect x="72.836" y="318.442" fill="#FFFFFF" width="71.037" height="89.212"/>
+		<rect x="143.873" y="318.442" fill="#F1F2F2" width="71.037" height="89.212"/>
+		<rect x="214.91" y="318.442" fill="#FFFFFF" width="71.037" height="89.212"/>
+		<rect x="285.947" y="318.442" fill="#F1F2F2" width="71.036" height="89.212"/>
+		<rect x="356.984" y="318.442" fill="#FFFFFF" width="71.036" height="89.212"/>
+		<rect x="428.021" y="318.442" fill="#F1F2F2" width="71.036" height="89.212"/>
+		<rect x="498.093" y="318.442" fill="#FFFFFF" width="71.036" height="89.212"/>
+	</g>
+	<g id="ligne_3">
+		<rect x="72.354" y="496.865" fill="#FFFFFF" width="71.037" height="89.213"/>
+		<rect x="143.391" y="496.865" fill="#F1F2F2" width="71.037" height="89.213"/>
+		<rect x="214.428" y="496.865" fill="#FFFFFF" width="71.037" height="89.213"/>
+		<rect x="285.465" y="496.865" fill="#F1F2F2" width="71.036" height="89.213"/>
+		<rect x="356.502" y="496.865" fill="#FFFFFF" width="71.036" height="89.213"/>
+		<rect x="427.539" y="496.865" fill="#F1F2F2" width="71.036" height="89.213"/>
+		<rect x="497.61" y="496.865" fill="#FFFFFF" width="71.036" height="89.213"/>
+	</g>
+</g>
+<g id="Guide" display="none">
+</g>
+</svg>
