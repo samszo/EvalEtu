@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face { 	font-family: "CenturyGothic-Bold"; 	src: url('ressources/GOTHICB.TTF'); }
+@font-face { 	font-family: "Bauhaus93"; 	src: url('ressources/BAUHS93.TTF'); }
+
+
+Pour IE le code est différent soit : 
+@font-face { 	font-family: "century gothic"; 	src: url('../font/SCRIPTIN.eot'); 
+}
+html
+{
+	background: #000;
+}
+body
+{
+	margin: 0;
+}
+svg
+{
+
+	background: #fff;
+}
+#fleche_gauche:hover
+{
+	border: solid 1px #F00;
+	cursor: pointer;
+}
+
+#fleche_droite:hover
+{
+	border: solid 1px #F00;
+	cursor: pointer;
+}
+#deco:hover
+{
+	cursor: pointer;
+}
+
+.profils:hover
+{
+	cursor: pointer;
+	fill: #B20202;
+}
+.filtre:hover
+{
+	cursor: pointer;
+	fill: #B20202;
+}
+
+tspan:hover
+{
+	color: #B20202;
+}
+
+
