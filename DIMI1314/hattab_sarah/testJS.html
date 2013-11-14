@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+	<head>
+		<script type="application/javascript">
+			function coucou(prenom){
+				alert("bonjour "+prenom);
+			}
+			function CouCou(prenom){
+				console.log("bonjour "+prenom);
+			}
+			
+	  		function ditLe(message){
+     		var audioObj = document.createElement("audio");
+      		audioObj.autoplay = "autoplay";
+ 
+      		var sourceObj = document.createElement("source");
+      		sourceObj.src = "salutsarah.mp3";
+      		sourceObj.type= "audio/mpeg";
+      		audioObj.appendChild(sourceObj);
+ 
+      		document.body.appendChild(audioObj);  
+ 		 	}
+ 
+		</script>
+		<title> TestJS </title>
+	</head>
+	
+	<body onload="coucou('Sarah');CouCou('moi');">
+	
+	<div onmouseover="CouCou('DEBUSSY')"> DEBUSSY </div>
+	
+	
+	<script type="application/javascript">
+		CouCou("zappa")
+		CouCou("Ravel")
+		
+		ditLe("salutsarah")
+	</script>
+	</body>
+</html>
