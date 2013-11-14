@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	   <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+	   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <link rel="stylesheet" href="css/layout_planning_svg.css">
+	   <meta charset="utf-8">
+  </head>
+  <body>
+	 <header> 
+		<img alt="UnivPlanning" src="proposition_graphique/planning_logo.png" id="logo"/> 
+		<p class="he white">Bienvenue Claire Mauchin !<br />Planning du <b>master 1 DIMI</b><br />Ce n’est pas le vôtre ? → Changer d’utilisateur.</p>
+		<div class="right">
+			<select class="he">
+				<option>2013-2014</option>
+				<option>2014-2015</option>
+				<script>
+					var text1 = '2013-2014';
+					$("select option").filter(function() {
+						//may want to use $.trim in here
+						return $(this).text() == text1; 
+					}).prop('selected', true);
+				</script>
+			</select>
+			<select class="he">
+				<option value="0">Janvier</option>
+				<option value="1">Février</option>
+				<option value="2">Mars</option>
+				<option value="3">Avril</option>
+				<option value="4">Mai</option>
+				<option value="5">Juin</option>
+				<option value="6">Juillet</option>
+				<option value="7">Août</option>
+				<option value="8">Septembre</option>
+				<option value="9">Octobre</option>
+				<option value="10">Novembre</option>
+				<option value="11">Décembre</option>
+				<script>
+					var text1 = 'Octobre';
+					$("select option").filter(function() {
+						//may want to use $.trim in here
+						return $(this).text() == text1; 
+					}).prop('selected', true);
+				</script>
+			</select>
+			<select class="he">
+				<option>Semaine 1</option>
+				<option>Semaine 2</option>
+				<option>Semaine 3</option>
+				<option>Semaine 4</option>
+				<option>Semaine 5</option>
+				<script>
+					var text1 = 'Semaine 5';
+					$("select option").filter(function() {
+						//may want to use $.trim in here
+						return $(this).text() == text1; 
+					}).prop('selected', true);
+				</script>
+			</select>
+			<input type="submit" value="OK">
+			<input type="text" class="he" value="Cherchez un cours ou un professeur"><input type="submit" value="OK">
+		</div>	
+	 </header>
+	<script type="text/javascript">
+	//création d'un tableau de semaines en json
+	var arrSemaine = ['Semaine 1', 'Semaine 2', 'Semaine 3', 'Semaine 4', 'Semaine 5'];
+	
+	//creer la variable pour le mois en cours
+	var semaineCourant = 4;
+
+	//charger le SVG
+	d3.xml("proposition_graphique/planning.svg", "image/svg+xml", function(xml) {
+	  document.body.appendChild(xml.documentElement);
+	  changeSemaine();
+	});
+	
+
+	function precSemaine(){
+		if(semaineCourant>0){
+			semaineCourant --;
+		}
+		changeSemaine();
+	}
+
+	function suivSemaine(){
+		if(semaineCourant < arrSemaine.length-1){
+			semaineCourant ++;
+		}
+		changeSemaine();
+	}
+
+	function changeSemaine(){
+		//récupère la balise texte à modifier
+		var eDateSemaine = document.getElementById("dateSemaine");
+		//change la valeur de la balise texte
+		eDateSemaine.textContent = arrSemaine[semaineCourant];
+	}
+    </script>
+  </body>
+</html>
