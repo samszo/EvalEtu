@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="application/javascript">
+	function coucou(prenom){ <!-- fonction coucou prend en argument prenom-->
+		alert("Bonjour "+prenom);
+	}
+	function CouCou(prenom){
+		console.log("Bonjour "+prenom);
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TestJS</title>
+</head>
+
+<body onload="CouCou('moi');"> <!-- mettre paramètre dans la parenthèse / ONLOAD = événement-->
+
+<div onclick="CouCou('Tony');">Clique sur Tony</div>
+
+<script type="application/javascript">
+	CouCou("Zappa");
+	CouCou("Ravel");
+</script>
+
+</body>
+</html>
