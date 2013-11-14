@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script type="application/javascript">
+  function maFonction(prenom){
+  alert("Bonjour "+prenom);
+  }
+  function reCoucou(prenom){
+  console.log("Bonjour "+prenom);
+  }
+  function ditLe(message){
+		var audioObj = document.createElement("audio");
+		audioObj.autoplay = "autoplay";
+
+		var sourceObj = document.createElement("source");
+		sourceObj.src = "truc.mp3";
+		sourceObj.type= "audio/mpeg";
+		audioObj.appendChild(sourceObj);
+
+		document.body.appendChild(audioObj);	
+	}
+  </script>
+  <title>Mon exemple</title>
+  </head>
+  
+  <body onload="maFonction('Truc'); reCoucou('Lalala');">
+  
+    <div onmouseover="reCoucou('Debussy');"> Debussy </div>
+	
+    <script type="application/javascript">
+		reCoucou("zappa");
+		ditLe("truc"); 
+	</script>
+	
+  </body>
+</html>

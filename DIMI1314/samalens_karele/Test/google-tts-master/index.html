@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Text-to-Speech API demo</title>
+
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        #error {
+            margin: 1em 0;
+            color: #f00;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 5em;
+        }
+        textarea {
+          display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Demo of Google Text-to-Speech API</h1>
+
+<div id="tts_demo"></div>
+
+<div id="error"></div>
+
+<p><strong>Player: </strong><span id="tts_player"></span></p>
+
+<footer>
+    <p>Source: <a href="https://github.com/hiddentao/google-tts">https://github.com/hiddentao/google-tts</a></p>
+    <p>Developed by <a href="http://www.hiddentao.com/archives/2012/04/01/google-tts-a-javascript-api-for-google-text-to-speech-engine/">Ramesh Nair</a>, based on code by <a href="http://weston.ruter.net/projects/google-tts/">Weston Ruter</a>.</p>
+</footer>
+
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="src/google-tts.js"></script>
+<script type="text/javascript" src="soundmanager2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      soundManager.setup({
+        url: '/',
+        preferFlash: false,
+        onready: function() {
+          if (!window.GoogleTTS) {
+            $("#error").text("Sorry, the google-tts script couldn't be loaded.");
+            return;
+          } else {
+            var HTML = '\
+            <div> \
+                <label for="demo_language">Language:</label> \
+                <select id="demo_language"> \
+                    <option value="" disabled="disabled">(Select language)</option> \
+                </select> \
+            </div> \
+            <div> \
+                <label for="demo_text">Text:</label> \
+                <textarea rows="5" cols="60" id="demo_text" /> \
+            </div> \
+            <button id="demo_play">Play!</button> \
+            ';
+            $("#tts_demo").html(HTML);
+          }
+
+          var googleTTS = new window.GoogleTTS();
+
+          // setup language options
+          $.each(googleTTS.languages(), function(key, value) {
+            $('#demo_language').append('<option value="' + key + '">' + value + '</option>');
+          });
+
+          // play
+          $("#demo_play").click(function() {
+            googleTTS.play($("#demo_text").val(), $("#demo_language").val(), function(err) {
+              if (err) {
+                $("#error").text(err.toString());
+              }
+
+              console.log('Finished playing');
+            });
+          });
+
+          // defaults
+          $("#demo_language").val('zh-CN');
+          $("#demo_text").val('中文');
+
+          // char count
+          $("#demo_text").keyup(function() {
+            console.log('test');
+            var chars = $("#demo_text").val();
+            $("label[for=demo_text]").text("Text: (" + chars.length + "):");
+          });
+
+          // available player
+          googleTTS.getPlayer(function (err, player) {
+            if (err) {
+              return $("#error").text(err.toString());
+            }
+
+            if (player) {
+              $("#tts_player").text(player.toString());
+            } else {
+              $("#tts_player").text('None available');
+            }
+          });
+        }
+      });
+    });
+</script>
+
+
+</body>
+</html>
