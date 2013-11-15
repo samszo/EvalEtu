@@ -36,7 +36,11 @@ if (isset($handle) && !empty($handle)) {
         
         //on les découpe selon notre ...
         $trueLink = explode('</a>', $link);
-        $personne[] = new Personne($trueLink[0]);
+        //$personne[] = new Personne($desc, $trueLink[0]);
+        $desc = utf8_decode((string)$element->title);
+		$presence=0;
+		$abscence=0;
+		$personne[] = new Personne($desc,$trueLink);
     } 	
     
     
@@ -47,6 +51,22 @@ if (isset($handle) && !empty($handle)) {
 <hr/>
 <?php 
 foreach($personne as $p){ ?>
+
+	<?php $identite = explode(" ", $p->nom);?>
+			<?php if (empty($identite[0])) {  $identite[0]="vide";}?>
+			<?php if (empty($identite[1])) { $identite[1]="vide";}?>
+			<?php
+			mysqli_query($connexion,"INSERT INTO etudiants (id_etudiant, nom, prenom) VALUES ($id_etudiant, '$identite[0]','$identite[1]')");
+			$nb+=1;?>
+	
+	
+       <img class="photo" <?php echo $p->img[0];?>></img>
+    
+		
+		<p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
+        <p> Prenom : <?php if (!empty($identite[1])) {echo $identite[1];}?></p>
+
+
     <div class="photo">
         <img <?php echo $p->img;?>></img>
         <p> Nom et Prenom: <?php echo $p->titre;?> </p>
