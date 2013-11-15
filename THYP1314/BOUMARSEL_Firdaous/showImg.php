@@ -36,6 +36,8 @@ if (isset($handle) && !empty($handle)) {
         
         //on les découpe selon notre ...
         $trueLink = explode('</a>', $link);
+        
+        
         //$personne[] = new Personne($desc, $trueLink[0]);
         $desc = utf8_decode((string)$element->title);
 		$personne[] = new Personne($desc,$trueLink);
@@ -56,12 +58,16 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }	?>
-
-<?php 
-$nb=0;
-foreach($personne as $p){ ?>
-
-	<?php $identite = explode(" ", $p->nom);?>
+		<?php 
+		$nb=0;
+		foreach($personne as $p){
+		 ?>
+    
+	
+	<div  id="etudiant<?php echo ($id_etudiant)?>">
+		
+		
+			<?php $identite = explode(" ", $p->nom);?>
 			<?php if (empty($identite[0])) {  $identite[0]="vide";}?>
 			<?php if (empty($identite[1])) { $identite[1]="vide";}?>
 			<?php
@@ -69,16 +75,13 @@ foreach($personne as $p){ ?>
 			$nb+=1;?>
 	
 	
-	
+       <img class="photo" <?php echo $p->img[0];?>></img>
+    
 		
-
-
-    <div class="photo">
-        <img <?php echo $p->img;?>></img>
-       <p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
+		<p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
         <p> Prenom : <?php if (!empty($identite[1])) {echo $identite[1];}?></p>
-        
-        <div class="diagramme">
+		
+		<div class="diagramme">
             <p id="headBlock">
                 <input type="radio" value="Present" name="presence"> Present
                 <input type="radio" value="Absent" name="presence"> Absent
@@ -86,11 +89,20 @@ foreach($personne as $p){ ?>
             </p>
             
         </div>
-        
-    </div>
-    <hr/>
+		<p id="nbre_presences"></p>
+		
+		</div>
+	<hr/>
+	
+	<?php if($nb%6==0){echo '</tr><tr>';}?>
+	
+	<?php $id_etudiant = $id_etudiant+1; ?>
 <?php }
+
 ?>
+
+<?php mysqli_close($connexion); ?>
+	
 
 
 

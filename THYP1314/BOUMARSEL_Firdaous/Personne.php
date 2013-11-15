@@ -16,8 +16,8 @@ class Personne {
     
     
     function __construct($nom,$img) {
+        $this->nom = $nom;
         $this->img = $img;
-        $this->titre = $titre;
     }
     
    // function __construct($titre){
