@@ -1,6 +1,6 @@
 <?php
 include_once 'Personne.php';
-
+$id_etudiant=1;
 // lecture d'un flux RSS 
 $handle = fopen("http://picasaweb.google.com/data/feed/base/user/112537161896190034287/albumid/5931538032377292977?alt=rss&kind=photo&authkey=Gv1sRgCJjJwc265LnxigE&hl=fr", "rb");
 
@@ -38,8 +38,6 @@ if (isset($handle) && !empty($handle)) {
         $trueLink = explode('</a>', $link);
         //$personne[] = new Personne($desc, $trueLink[0]);
         $desc = utf8_decode((string)$element->title);
-		$presence=0;
-		$abscence=0;
 		$personne[] = new Personne($desc,$trueLink);
     } 	
     
@@ -49,7 +47,18 @@ if (isset($handle) && !empty($handle)) {
 <hr/>
 <h2>Liste des étudiants :</h2>
 <hr/>
+
+<?php
+
+$connexion=mysqli_connect("localhost","root","root","planning");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }	?>
+
 <?php 
+$nb=0;
 foreach($personne as $p){ ?>
 
 	<?php $identite = explode(" ", $p->nom);?>
@@ -60,16 +69,14 @@ foreach($personne as $p){ ?>
 			$nb+=1;?>
 	
 	
-       <img class="photo" <?php echo $p->img[0];?>></img>
-    
+	
 		
-		<p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
-        <p> Prenom : <?php if (!empty($identite[1])) {echo $identite[1];}?></p>
 
 
     <div class="photo">
         <img <?php echo $p->img;?>></img>
-        <p> Nom et Prenom: <?php echo $p->titre;?> </p>
+       <p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
+        <p> Prenom : <?php if (!empty($identite[1])) {echo $identite[1];}?></p>
         
         <div class="diagramme">
             <p id="headBlock">
