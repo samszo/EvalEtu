@@ -38,6 +38,14 @@ CREATE TABLE `jqcalendar` (\
   `RecurringRule` varchar(500) CHARACTER SET utf8 DEFAULT NULL,\
   PRIMARY KEY (`Id`)\
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;\
+
+CREATE TABLE IF NOT EXISTS fboumarsel_presence
+(
+idEtudiant INT,
+type CHAR(10),
+PRIMARY KEY(idEtudiant),
+FOREIGN KEY (idEtudiant) REFERENCES etudiants(id_etudiant)
+)
 \
 --\
 -- Contenu de la table `jqcalendar`\

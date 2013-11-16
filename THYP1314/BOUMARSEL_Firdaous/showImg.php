@@ -1,5 +1,6 @@
 <?php
 include_once 'Personne.php';
+include 'presence.php';
 $id_etudiant=1;
 // lecture d'un flux RSS 
 $handle = fopen("http://picasaweb.google.com/data/feed/base/user/112537161896190034287/albumid/5931538032377292977?alt=rss&kind=photo&authkey=Gv1sRgCJjJwc265LnxigE&hl=fr", "rb");
@@ -83,13 +84,14 @@ if (mysqli_connect_errno())
 		
 		<div class="diagramme">
             <p id="headBlock">
-                <input type="radio" value="Present" name="presence"> Present
-                <input type="radio" value="Absent" name="presence"> Absent
-                <input type="radio" value="En Retard" name="presence"> En Retard
+                <input type="radio" value="Present" name="presence" onclick="<?php add($id_etudiant , 'present')?>"> Present
+                <input type="radio" value="Absent" name="presence" onclick=""> Absent
+                <input type="radio" value="En Retard" name="presence" onclick=""> En Retard
             </p>
             
+            
         </div>
-		<p id="nbre_presences"></p>
+		
 		
 		</div>
 	<hr/>
@@ -103,6 +105,5 @@ if (mysqli_connect_errno())
 
 <?php mysqli_close($connexion); ?>
 	
-
 
 
