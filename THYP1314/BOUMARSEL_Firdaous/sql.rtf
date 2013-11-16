@@ -39,6 +39,11 @@ CREATE TABLE `jqcalendar` (\
   PRIMARY KEY (`Id`)\
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;\
 
+\
+--\
+-- Structure de la table `fboumarsel_presence`\
+--\
+\
 CREATE TABLE IF NOT EXISTS fboumarsel_presence
 (
 idEtudiant INT,
@@ -46,6 +51,16 @@ type CHAR(10),
 PRIMARY KEY(idEtudiant),
 FOREIGN KEY (idEtudiant) REFERENCES etudiants(id_etudiant)
 )
+
+ Structure de la table `etudiants`
+--
+
+CREATE TABLE `etudiants` (
+  `id_etudiant` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` char(15) DEFAULT NULL,
+  `prenom` char(15) DEFAULT NULL,
+  PRIMARY KEY (`id_etudiant`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 \
 --\
 -- Contenu de la table `jqcalendar`\
