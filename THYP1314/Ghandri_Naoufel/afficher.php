@@ -98,7 +98,7 @@ if (mysqli_connect_errno())
 			$nb+=1;?>
 	
 	
-       <img class="photo" <?php echo $p->img[0];?>
+       <img class="photo" <?php echo $p->img[0];?>></img>
     
 		
 		<p> Nom : <?php if (!empty($identite[1])) {  echo $identite[0];}?></p>
