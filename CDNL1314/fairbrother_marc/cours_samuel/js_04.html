@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Liste étudiants CDNL</title>
+		<style type="text/css">
+		.etu{
+		width:300px;
+		background-color:#000;
+		color:#fff;
+		}
+		</style>
+		<script type="text/javascript">
+		//création du tableau en JSON
+		//var arrEtu = ['Marc','Olivier','Jonathan','Raphael'];
+		var arrEtu = [{prenom:'Marc',nom:'Fairbrother',diplome:'CDNL'},{prenom:'Olivier',nom:'Chapelet',diplome:'CDNL'}];
+			function showEtu(etu){
+			arrEtu.forEach(function(etu){
+				document.write('<div class="etu">'+etu.prenom+' '+etu.nom+'<br>');
+				document.write('<img class="pres" src="present.jpg">');
+				/*méthode boutons d'absence :
+				affiche postion y lorsqu'on click sur l'objet
+				mais le message correct dans la console*/
+				var y = etu.prenom+' '+etu.nom+' est absent';
+				console.log(y);
+				document.write('<img class="abs" onclick="alert(y)" src="absent.jpg"></div><br>');
+			});
+		};
+		showEtu(arrEtu);
+		/*méthode boutons de présence :
+		affiche la boîte correcte au chargement de la page
+		et le message correct dans la console mais pas
+		de boîte lorsqu'on click sur l'objet*/
+		function presButton(){
+			document.getElementsByName('etu').onclick = arrEtu.forEach(function(etu){
+				var prenom = etu.prenom;
+				var nom =  etu.nom;
+				var text = 'est present';
+				console.log(prenom+' '+nom+' '+text);
+				alert(prenom+' '+nom+' '+text);
+			});
+		};
+		presButton();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
