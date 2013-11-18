@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1024px"
+	 height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<g id="Fond">
+	<rect fill="#4C69AB" stroke="#000000" stroke-miterlimit="10" width="1024" height="768"/>
+</g>
+<g id="SideBar">
+	<rect x="813.5" y="0" fill="#DFBAB9" stroke="#000000" stroke-miterlimit="10" width="211.5" height="768"/>
+</g>
+<g id="Texte">
+	<text transform="matrix(1 0 0 1 841 26.6362)" fill="#FFFFFF" font-family="'MyriadPro-Bold'" font-size="18">(SideBar mouvante)</text>
+	<text transform="matrix(1 0 0 1 834.9785 65.9087)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="25">ERGONOMIE</tspan><tspan x="17.536" y="30" font-family="'ComicSansMS'" font-size="25">VISUELLE</tspan></text>
+	<text transform="matrix(1 0 0 1 848.2725 134.8184)" font-family="'ComicSansMS'" font-size="21">Chapitre 1</text>
+	<text transform="matrix(1 0 0 1 848.2725 181.2725)" font-family="'ComicSansMS'" font-size="21">Chapitre II</text>
+	<text transform="matrix(1 0 0 1 848.2725 229.3638)" font-family="'ComicSansMS'" font-size="21">Chapitre III</text>
+	<text transform="matrix(1 0 0 1 861.4541 298.7271)" fill="#F8F7F7" font-family="'ComicSansMS'" font-size="21">ACTUALITES </text>
+	<text transform="matrix(1 0 0 1 822.5459 343.9092)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="18">Changement de cours :</tspan><tspan x="0" y="15.6" font-family="'ComicSansMS'" font-size="13">Le cours d’ergonomie visuelle du</tspan><tspan x="0" y="31.2" font-family="'ComicSansMS'" font-size="13">07 novembre 2013 sera remplaçé</tspan><tspan x="0" y="46.8" font-family="'ComicSansMS'" font-size="13">par le cours d’Algorythmique de </tspan><tspan x="0" y="62.4" font-family="'ComicSansMS'" font-size="13">9h à 13h.</tspan></text>
+	<text transform="matrix(1 0 0 1 822.7275 470.9092)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="18">Déplacement horaires :</tspan><tspan x="0" y="15.6" font-family="'ComicSansMS'" font-size="13">Le cours d’ergonomie visuelle du</tspan><tspan x="0" y="31.2" font-family="'ComicSansMS'" font-size="13">14 novembre 2013 aura lieu à 9h</tspan><tspan x="0" y="46.8" font-family="'ComicSansMS'" font-size="13">au lieu de 10h.</tspan></text>
+	<text transform="matrix(1 0 0 1 823.0908 575.0908)" font-family="'ComicSansMS'" font-size="18">Envoyer un mail au prof</text>
+</g>
+<g id="Barre">
+	<rect x="884.454" y="463.909" fill="none" width="55.455" height="29.091"/>
+	<rect fill="#FAFAF9" width="204.364" height="33"/>
+	<rect x="204.364" fill="#E8E6E6" width="204.364" height="33"/>
+	<rect x="408.818" fill="#D1D1CF" width="202.362" height="33"/>
+	<rect x="611.18" fill="#BDBCBC" width="202.32" height="33"/>
+	<rect x="1.046" y="363.909" fill="#B3B2B2" width="812.454" height="72.272"/>
+	<circle fill="#666666" cx="4.364" cy="399.592" r="33.182"/>
+	<g>
+	</g>
+</g>
+<g id="Jours">
+	<text transform="matrix(1 0 0 1 260.2725 25.6362)" font-family="'ComicSansMS'" font-size="25">Mardi 12</text>
+	<text transform="matrix(1 0 0 1 452.9092 25.6362)" font-family="'ComicSansMS'" font-size="25">Mercredi 13</text>
+	<text transform="matrix(1 0 0 1 674 26.6362)" font-family="'ComicSansMS'" font-size="25">Jeudi 14</text>
+	<text transform="matrix(1 0 0 1 62.6362 25.6362)" font-family="'ComicSansMS'" font-size="25">Lundi 11</text>
+	<rect y="33" fill="#E0BABA" width="204.364" height="282.727"/>
+	<rect x="204.364" y="33.001" fill="#9BB5B4" width="204.364" height="330.908"/>
+	<rect x="408.818" y="88.455" fill="#8E90B2" width="204.364" height="275.456"/>
+	<rect y="436.183" fill="#87769B" width="204.364" height="330.909"/>
+	<rect x="204.364" y="436.183" fill="#9199BC" width="206" height="284.09"/>
+	<rect x="410.364" y="436.183" fill="#9A7777" width="204.364" height="330.909"/>
+	<rect x="611.18" y="33.001" fill="#ABB591" width="202.32" height="330.909"/>
+	<text transform="matrix(1 0 0 1 5.6445 415.7539)" fill="#FAFAF9" font-family="'ComicSansMS'" font-size="52.3872">+</text>
+	<text transform="matrix(1 0 0 1 16.8643 131.3638)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Ergonomie visuelle</tspan><tspan x="81.152" y="24" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="46.914" y="48" font-family="'ComicSansMS'" font-size="20">9h - 12h</tspan><tspan x="81.152" y="72" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="18.081" y="96" font-family="'ComicSansMS'" font-size="20">Joelle COHEN</tspan></text>
+	<text transform="matrix(1 0 0 1 240.0415 130.2725)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Communication</tspan><tspan x="23.286" y="24" font-family="'ComicSansMS'" font-size="20">graphique</tspan><tspan x="64.155" y="48" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="29.917" y="72" font-family="'ComicSansMS'" font-size="20">9h - 13h</tspan><tspan x="64.155" y="96" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-7.427" y="120" font-family="'ComicSansMS'" font-size="20">François LOZET</tspan></text>
+	<text transform="matrix(1 0 0 1 454.7109 154.4546)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Histoire du</tspan><tspan x="21.563" y="24" font-family="'ComicSansMS'" font-size="20">Design</tspan><tspan x="48.306" y="48" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="9.565" y="72" font-family="'ComicSansMS'" font-size="20">10h - 13h</tspan><tspan x="48.306" y="96" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-31.519" y="120" font-family="'ComicSansMS'" font-size="20">Nicolas BATTEUR</tspan></text>
+	<text transform="matrix(1 0 0 1 679.9775 146)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Anglais</tspan><tspan x="29.219" y="24" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-5.02" y="48" font-family="'ComicSansMS'" font-size="20">9h - 13h</tspan><tspan x="29.219" y="72" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-52.959" y="96" font-family="'ComicSansMS'" font-size="20">Cecile COUDRIOU</tspan></text>
+	<text transform="matrix(1 0 0 1 450.8706 551.2715)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Théorie de la</tspan><tspan x="-6.738" y="24" font-family="'ComicSansMS'" font-size="20">Communication</tspan><tspan x="57.417" y="48" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="18.677" y="72" font-family="'ComicSansMS'" font-size="20">14h - 17h</tspan><tspan x="57.417" y="96" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-18.418" y="120" font-family="'ComicSansMS'" font-size="20">Pierre BARBOZA</tspan></text>
+	<text transform="matrix(1 0 0 1 239.1958 518.2734)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Algorithmique</tspan><tspan x="61.001" y="24" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="22.261" y="48" font-family="'ComicSansMS'" font-size="20">14h - 16h</tspan><tspan x="61.001" y="72" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="28.94" y="96" font-family="'ComicSansMS'" font-size="20">Samuel </tspan><tspan x="5.151" y="120" font-family="'ComicSansMS'" font-size="20">SZONIECKY</tspan></text>
+	<text transform="matrix(1 0 0 1 39.4082 530.2734)"><tspan x="0" y="0" font-family="'ComicSansMS'" font-size="20">Méthodologie</tspan><tspan x="52.583" y="24" font-family="'ComicSansMS'" font-size="20">et</tspan><tspan x="34.468" y="48" font-family="'ComicSansMS'" font-size="20">Outils</tspan><tspan x="58.608" y="72" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="19.868" y="96" font-family="'ComicSansMS'" font-size="20">14h - 17h</tspan><tspan x="58.608" y="120" font-family="'ComicSansMS'" font-size="20">-</tspan><tspan x="-13.862" y="144" font-family="'ComicSansMS'" font-size="20">Michel AGNOLA</tspan></text>
+</g>
+</svg>
