@@ -7,8 +7,14 @@
 		<script type="text/javascript">
 		//création du tableau en JSON
 		//var arrEtu = ['Marc','Olivier','Jonathan','Raphael'];
-		var arrEtu = [{prenom:'Marc',nom:'Fairbrother',diplome:'CDNL'},{prenom:'Olivier',nom:'Chapelet',diplome:'CDNL'}];
-		showEtu();
+		var arrEtu = [{prenom:'Marc',nom:'Fairbrother',diplome:'CDNL'}
+			,{prenom:'Olivier',nom:'Chapelet',diplome:'CDNL'}
+			,{prenom:'Franck',nom:'Zappa',diplome:'CDNL'}
+			];
+		var arrProf = [{prenom:'Sam',nom:'Szo',diplome:'CDNL'}
+		,{prenom:'Nasser',nom:'Bouhai',diplome:'CDNL'}
+		];
+		
 		</script>
 		<style type="text/css">
 		.etu{
@@ -16,10 +22,7 @@
 		}
 		</style>
 	</head>
-	<body>
-	<script type="text/javascript">
-	present();
-	absent();
-	</script>
+	<body onload="showEtu(arrProf);">
+
 	</body>
 </html>
