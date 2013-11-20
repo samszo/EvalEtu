@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="../js/jquery.min.js" ></script>
+	<script>
+		function showRSS(url)
+		{
+			$.ajax({
+				  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
+				  dataType : 'json',
+				  success  : function (data) {
+				    if (data.responseData.feed && data.responseData.feed.entries) {
+				      $.each(data.responseData.feed.entries, function (i, e) {
+				        console.log("------------------------");
+				        console.log("title      : " + e.title);
+				        console.log("author     : " + e.author);
+				        console.log("description: " + e.description);
+				      });
+				    }
+				  }
+				});
+		}
+	</script>
+</head>
+	<body>
+		<form>
+			<select onchange="showRSS(this.value)">
+				<option value="">Selectioner un diplôme</option>
+				<option value="Google">THYP 1314</option>
+				<option value="https://picasaweb.google.com/data/feed/base/user/102961656570003949802/albumid/5931541532695278433?alt=rss&kind=photo&authkey=Gv1sRgCIvvqZ33v-voFA&hl=fr">CDNL 1314</option>
+			</select>
+		</form>
+		<br>
+		<div id="rssOutput">Le trombinoscope va arriver...</div>
+	</body>
+</html>
