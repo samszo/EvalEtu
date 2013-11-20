@@ -1,7 +1,5 @@
 function presMessage(etu){
-	arrEtu.forEach(function(etu){
-		alert(etu.prenom+' '+etu.nom+' est présent');
-	});
+	alert(etu.prenom+' '+etu.nom+' est présent');
 };
 function present(){
 	document.getElementById("present").onclick=presMessage;
@@ -14,6 +12,7 @@ function absMessage(etu){
 function absent(){
 	document.getElementById("absent").onclick=absMessage;
 };
+<<<<<<< HEAD
 function showEtu(etu){
 	arrEtu.forEach(
 
@@ -22,36 +21,36 @@ function showEtu(etu){
 
 		
 
+=======
+function showEtu(arr){
+	var i=0;
+	arr.forEach(function(etu){
+		var d=document.createElement("div");
+		d.setAttribute('class', 'etu');
+		d.innerHTML = etu.prenom+' '+etu.nom+' '+etu.diplome;
+		document.body.appendChild(d);
+		
+>>>>>>> b23d082a2956430f5162a4d927398a45c3297289
 		var presImg = document.createElement("img");
 			presImg.setAttribute('src', 'present.jpg');
 			presImg.setAttribute('alt', 'présent');
 			presImg.setAttribute('title', 'présent');
+<<<<<<< HEAD
 			presImg.setAttribute('id', 'present');
 			document.body.appendChild(presImg);
 
 			
+=======
+			presImg.setAttribute('id', 'present'+i);
+		presImg.addEventListener("click", function(){presMessage(etu)});
+		d.appendChild(presImg);
+>>>>>>> b23d082a2956430f5162a4d927398a45c3297289
 		var absImg = document.createElement("img");
 			absImg.setAttribute('src', 'absent.jpg');
 			absImg.setAttribute('alt', 'absent');
 			absImg.setAttribute('title', 'absent');
 			absImg.setAttribute('id', 'absent');
 			document.body.appendChild(absImg);
-		/*méthode boutons de présence :
-		affiche la boîte correcte au chargement de la page
-		et le message correct dans la console mais
-		une boîte lorsqu'on click sur l'objet
-		var prenom = etu.prenom;
-		var nom =  etu.nom;
-		var text = 'est present';
-		var message = prenom+' '+nom+' '+text;
-		console.log(prenom+' '+nom+' '+text);
-		document.write('<img class="pres" onclick=alert() src="present.jpg">');
-		document.getElementsByName(etu).onclick = alert(message);
-		méthode boutons d'absence :
-		affiche postion y lorsqu'on click sur l'objet
-		mais le message correct dans la console
-		var y = etu.prenom+' '+etu.nom+' est absent';
-		console.log(y);
-		document.write('<img class="abs" onclick="alert(y)" src="absent.jpg"></div><br>');*/
+		i++;
 	});
 };
