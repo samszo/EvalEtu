@@ -1,19 +1,21 @@
 function presentliste(etu){
+	var dl = document.getElementById("lst"); 
 
 	var liste = document.createElement("div");
-		liste.setAttribute('class', 'liste');
+		liste.setAttribute('class', 'listeP');
 		liste.innerHTML = etu.prenom+' '+etu.nom+' '+etu.diplome+' est présent';
-		document.body.appendChild(liste);
+	dl.appendChild(liste);
 	
 	
 };
 
 function absentliste(etu){
 
+	var dl = document.getElementById("lst"); 
 	var liste = document.createElement("div");
-		liste.setAttribute('class', 'liste');
+		liste.setAttribute('class', 'listeA');
 		liste.innerHTML = etu.prenom+' '+etu.nom+' '+etu.diplome+' est absent';
-		document.body.appendChild(liste);
+	dl.appendChild(liste);
 	
 	
 };
