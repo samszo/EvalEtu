@@ -2,7 +2,7 @@
 <?php
 // commentaire sur une ligne
 
-    $arrEtu = array('samy', 'scooby') ;
+    $arrEtu = array('samy', 'scooby', 'daphnee') ;
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +13,10 @@
 <meta charset="utf-8" />
 
    <script>
-     // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/page2_test.html
-     // variable globale
-     // AFAIRE !!!!!!!!!
+     // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/page3_test.php
+     // variable globale tableau $arrEtu
+     // en php 
+
       var message = 'bonjour' ;
 
      function EcrireBonjour(prenom)
@@ -60,9 +61,9 @@
 
    foreach ($arrEtu as $etu => $valeur) {
 
-         echo "	<div onmouseover='EcrireBonjour(''SAMY'') ' >  $valeur  
-              <img onclick='Ecrire(''$valeur est present'')' src='img/timeP.jpg' alt='Present'> 
-              <img onclick='Ecrire(''$valeur est absent'')' src='img/timeA.jpg' alt='Absent'> 
+         echo "	<div onmouseover=\"EcrireBonjour('$valeur' )\" >  $valeur  
+              <img onclick=\"Ecrire('$valeur est present') \" src=\"img/timeP.jpg\" alt=\"Present\"> 
+              <img onclick=\"Ecrire('$valeur est absent') \" src=\"img/timeA.jpg\" alt=\"Absent\"> 
         </div>  " ;
 
 
