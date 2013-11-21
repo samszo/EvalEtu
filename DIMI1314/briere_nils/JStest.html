@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <script type="application/javascript">
+   function coucou(prenom){
+     alert("Salut "+prenom);
+   }
+   function CouCou(prenom){
+     console.log("Bonjour "+prenom);
+   }
+ 
+   CouCou("Ravel");
+     
+   function ditLe(message){
+     var audioObj = document.createElement("coucou");
+     audioObj.autoplay = "autoplay";
+ 
+     var sourceObj = document.createElement("source");
+     sourceObj.src = "coucou.mp3";
+     sourceObj.type= "coucou/mpeg";
+     audioObj.appendChild(sourceObj);
+ 
+     document.body.appendChild(audioObj);  
+   }
+   
+ </script>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>TestJS</title>
+ </head>
+ <body onload="CouCou('Nils');">
+ 
+ <div onmouseover="CouCou('DEBUSSY'); ditLe('coucou');" >DEBUSSY</div>
+ 
+ <script type="application/javascript">
+   CouCou("Toi");
+   ditLe("coucou");
+ </script>
+ </body>
+ </html>
