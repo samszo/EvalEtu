@@ -12,12 +12,12 @@
  */
 class Personne {
     public $img;
-   public $titre;
+   public $nom;
     
     
-    function __construct($img, $titre) {
+    function __construct($nom,$img) {
+        $this->nom = $nom;
         $this->img = $img;
-        $this->titre = $titre;
     }
     
    // function __construct($titre){

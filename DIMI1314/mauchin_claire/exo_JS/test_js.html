@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+ 
+        <head>
+                <meta charset="utf-8">
+                <title>Test JS</title>
+ 
+                <!-- meta -->
+                <meta name="description" content="">
+                <meta name="author" content="">
+ 
+                <!-- mon icon -->
+                <link rel="shortcut icon" href="favicon.ico">
+ 
+                <!-- mon template.css 
+                <link rel="stylesheet" href="main.css" type="text/css" media="screen">-->
+				
+				<!--JS-->
+				<script type="application/javascript">
+					function MyAwesomeFunction(prenom){
+						console.log("Bonjour" +prenom);
+					}
+					function MyCoolBaby(prenom){
+						console.log("Bonjour" +prenom);
+					}
+					function ditLe(message){
+						var audioObj = document.createElement("audio");
+						audioObj.autoplay = "autoplay";
+
+						var sourceObj = document.createElement("source");
+						sourceObj.src = "chocolat.mp3";
+						sourceObj.type= "audio/mpeg";
+						audioObj.appendChild(sourceObj);
+
+						document.body.appendChild(audioObj);	
+					}
+				</script>
+ 
+        </head>
+        <body onload="MyCoolBaby(' moi');">
+			<div onmouseover="MyCoolBaby(' Debussy');">Debussy</div>
+			
+		
+			<script type="application/javascript">
+				MyAwesomeFunction(" Zappa");
+				MyAwesomeFunction(" Ravel");
+				ditLe("Chocolat");
+			</script>
+		</body>
+</html>

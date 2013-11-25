@@ -74,9 +74,7 @@ include_once 'fonction.php';
 
 
 
- <div id="studentsInfo">
-
-        </div>
+ 
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="findStudents.js"></script>
 
@@ -84,6 +82,8 @@ include_once 'fonction.php';
 
 
 	 </table>
+<div id="studentsInfo">
 
+        </div>
 	</body>
 	</html>

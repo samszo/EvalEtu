@@ -1,0 +1,193 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	    <title>Planning CDNL 2013 - 2014</title> 
+		<meta charset="utf-8" />
+		<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+		<link type="text/css" href="css/planning.css" rel="stylesheet" />
+	    <script type="text/javascript" src="js/d3.js"></script>
+		<script type="text/javascript" src="js/gantt-chart-d3.js"></script>	    
+	</head> 
+  <body> 
+    <h1>Planning CDNL 2013 - 2014</h1>
+    
+    
+    <div id="tabType"></div>
+    <div id="tabCou"></div>
+    <div id="tabInt"></div>
+    <div id="divWeeks"></div>
+    <div id="footer"><br/></div>
+    
+    <script id='script'>
+    var largeTot=200;
+	var urlCou = "data/PlanningCDNL13-14_2.csv";
+	var urlInt = "data/PlanningCDNL13-14_1.csv";
+	var urlCal = "data/PlanningCDNL13-14_0.csv";
+	var dataCal, dataCou, dataInt;
+	
+	var nbCal;
+	var nbHeureCou = 3;
+
+	var numWeek = d3.time.format("%W");
+	var jourWeek = d3.time.format("%w");
+	var dateCSV = d3.time.format("%d/%m/%Y %H:%M:%S");
+	var dateTitre = d3.time.format("%d/%m/%y");
+	var color = d3.scale.category20c();
+	//changer les lignes et faire en sorte que les cours puissent recouvrir plusieurs cases
+	var lignes = [{"code":"AM","val":"9h-12h"},{"code":"PM1","val":"12h-15h"},{"code":"PM2","val":"15h-18h"}];
+	var columns = ["","Lundi","Mardi","Mercredi","Jeudi","Vendredi"];
+
+	var gantt, xB, brush;
+	
+	//chargement des données depuis les fichiers csv
+	d3.csv(urlCou, function(data1) {
+		dataCou = data1;
+		
+		d3.csv(urlCal, function(data2) {
+			dataCal = data2;
+
+			d3.csv(urlInt, function(data3) {
+				dataInt = data3;
+				creaPlanning();
+			});
+			
+		});
+		
+	});
+  
+	function creaPlanning(){
+
+		//création d'un tableau pour chaque semaine
+    	nbCal = dataCal.length;
+		for(var i=0; i < nbCal; i++){
+			setCalData("AM", dataCal[i]);
+			setCalData("PM1", dataCal[i]);
+			setCalData("PM2", dataCal[i]);	
+		}
+	}
+
+	function setCalData(type, d){
+		var t;
+		if(d["Intervenant"+type]){
+			//récupère le n° de semaine et le jour
+			var dt = dateCSV.parse(d["Date"] + " " + d[type+"deb"]);
+			var nw = numWeek(dt);
+			var jw = jourWeek(dt);
+			var an = dt.getFullYear();
+
+			//vérifie si le tableau de cette semaine existe
+			var idTable="sem"+an+"_"+nw;
+			var table = document.getElementById(idTable);
+			if(!table){
+				//création de la table
+				creaTableSemaine(idTable, nw, jw, dt);
+			}
+			//récupère la cellule du cours
+			var cell = d3.select("#"+idTable+"_"+jw+"_"+type)
+				.append("div")
+				.attr("class", d["EC"+type]);
+				/*
+				.style("padding", "4px")
+				.style("background-color", color(d["EC"+type]));
+				*/
+			//ajoute les données du cours
+			var dInt = dataInt.filter(function (e) {
+				  return e["Nom"] == d["Intervenant"+type];
+			});
+			var dCour = dataCou.filter(function (e) {
+				  return e["Code EC"] == d["EC"+type];
+			});
+			cell.append("h3")
+			    .text(d["EC"+type]);
+			cell.append("h5")
+			    .text(dCour[0]["Intitulés des EC"]);
+			cell.append("h4")
+			    .text(dInt[0]["Civilité"]+" "+dInt[0]["Nom"]);
+			cell.append("h5")
+			    .text("lieu : "+d["Lieu"+type]);
+			
+		}				
+	}
+			
+
+	function creaTableSemaine(id, nw, jw, dt){
+		if(nw==0){
+			var toto="";
+		}
+		//création du titre
+		var plus = 7-jw;		
+		var dtFin = AddDays(dt, plus);
+		if(jw>1){
+			dt = AddDays(dt, -jw+1);			
+		}
+		d3.select("#divWeeks")
+			.append("h2")
+		    .text("Semaine "+nw+" du "+dateTitre(dt)+" au "+dateTitre(dtFin));
+
+		//création du tableau des cours
+		var table = d3.select("#divWeeks")
+			.append("table")
+		    .attr("id", id);
+        var	thead = table.append("thead");
+        var	tbody = table.append("tbody");
+
+	    // ajoute les en tête
+	    thead.append("tr")
+	        .selectAll("th")
+	        .data(columns)
+	        .enter()
+	        .append("th")
+	            .text(function(column, i) {
+		            if(column!=""){
+		        		var dtFin = AddDays(dt, (i-1));
+			            return column + " "+dateTitre(dtFin);
+		            }else 
+			            return column; 
+		            });
+
+	    // creation d'une ligne pour chaque plage horaire
+	    var rows = tbody.selectAll("tr")
+	        .data(lignes)
+	        .enter()
+	        .append("tr");
+
+	    // create a cell in each row for each column
+	    var cells = rows.selectAll("td")
+	        .data(function(row) {
+	            return columns.map(function(column) {
+	                return {column: column, value: row["val"], code: row["code"]};
+	            });
+	        })
+	        .enter()
+	        .append("td")
+		    .attr("class", function(d, i) {
+				return  i==0 ? "tdH" : "tdC";
+			    })
+		    .attr("id", function(d, i) {
+			    return id+"_"+i+"_"+d.code;
+			    })
+			.text(function(d) {
+				return  d.column=="" ? d.value : "";
+		    	});
+		
+	}
+
+	function AddDays(date, amount) 
+	{ 
+	    var tzOff = date.getTimezoneOffset() * 60 * 1000; 
+	    var t = date.getTime(); 
+	    t += (1000 * 60 * 60 * 24) * amount; 
+	    var d = new Date(); 
+	    d.setTime(t); 
+	    var tzOff2 = d.getTimezoneOffset() * 60 * 1000; 
+	    if (tzOff != tzOff2) 
+	    { 
+	        var diff = tzOff2 - tzOff; 
+	        t += diff; 
+	        d.setTime(t); 
+	    } 
+	    return d; 
+	} 	
+	</script>
+  </body>
+</html>

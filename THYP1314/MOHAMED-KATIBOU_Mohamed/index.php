@@ -42,17 +42,17 @@ $data = transformation_des_donnees(recuperation_des_donnees("edt.csv", array()))
 	   </tr>
 	  </thead>
 	  <tbody>
-	   <?php $weekdata = $yeardata[key($yeardata)]; while ( ($current = current($weekdata)) !== FALSE ) { $c = 1 - $c; ?>
+	   <?php $weekdata = $yeardata[key($yeardata)]; while ( ($current = current($weekdata)) !== FALSE ) { $c=0; $c = 1 - $c; ?>
 	    <tr class="<?php print $colors[$c]; ?>">
 	     <?php $daydata = $weekdata[key($weekdata)]; while ( ($current = current($daydata)) !== FALSE ) { ?>
 	      <td class="<?php print key($yeardata); ?>_">
-	       <?php $hourdata = $daydata[key($daydata)]; if($hourdata[date] !== null) {?>
+	       <?php $hourdata = $daydata[key($daydata)]; if($hourdata['date'] !== null) {?>
 	       <a href="#"><div class="data">
-		<p class="salle"><?php print $hourdata[salle]; ?></p>
-		<p class="heure"><?php print date("H:i", strtotime($hourdata[hd]))."-".date("H:i", strtotime($hourdata[hf])); ?></p>
-		<p class="ue"><?php print $hourdata[ue]; ?></p>
-		<p class="cours"><?php print $hourdata[cours]; ?></p>
-		<p class="profs"><?php print $hourdata[profs]; ?></p>
+		<p class="salle"><?php print $hourdata['salle']; ?></p>
+		<p class="heure"><?php print date("H:i", strtotime($hourdata['hd']))."-".date("H:i", strtotime($hourdata['hf'])); ?></p>
+		<p class="ue"><?php print $hourdata['ue']; ?></p>
+		<p class="cours"><?php print $hourdata['cours']; ?></p>
+		<p class="profs"><?php print $hourdata['profs']; ?></p>
 	       </div></a>
 	       <?php } ?>
 	       </td>

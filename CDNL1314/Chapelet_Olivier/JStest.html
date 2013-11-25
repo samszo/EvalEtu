@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <title>exercice</title>
+
+        <script type="text/javascript">
+            function ecrireBonjour()
+            {
+                //alert('bonjour '+prenom);
+                console.log('bonjour ');
+            }
+            
+            function ecrireAurevoir()
+            {
+                //alert('bonjour '+prenom);
+                console.log('Au revoir ');
+            }
+            
+         
+        </script>
+    </head>
+    
+    <body onload="ecrireBonjour('wam');">
+        <script type="text/javascript">
+            ecrireBonjour('wamwat');
+        </script>
+        <div onmouseover="ecrireBonjour()">A</div>
+        <div onmouseover="ecrireAurevoir()">B</div>
+        <div onmouseover="ecrireBonjour()">C</div>
+   
+        
+    </body>
+</html>

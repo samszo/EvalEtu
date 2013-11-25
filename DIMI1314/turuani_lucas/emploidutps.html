@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+   <meta charset="utf-8">
+  </head>
+  <body>
+  	<style type="text/css">
+		body{
+			background: #445565;
+		}
+		#planningsvg{
+			margin:0 auto;
+		}
+		#logo{}
+  	</style>
+    <script type="text/javascript">
+    //création d'un tableau de mois en json
+	var arrMois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet'];
+	
+	//creer la variable pour le mois en cours
+	var moisCourant = 1;
+
+	//charger le SVG
+	d3.xml("design/planning.svg", "image/svg+xml", function(xml) {
+	  document.body.appendChild(xml.documentElement);
+	  changeMois();
+	});
+
+	function precMois(){
+		if(moisCourant>0){
+			moisCourant --;
+		}
+		changeMois();
+	}
+
+	function suivMois(){
+		if(moisCourant < arrMois.length-1){
+			moisCourant ++;
+		}
+		changeMois();
+	}
+
+	function changeMois(){
+		//récupère la balise texte à modifier
+		var eDateMois = document.getElementById("dateMois");
+		var annee =  "2013";
+		var eDateAnnee = annee;
+		//change la valeur de la balise texte
+		eDateMois.textContent = arrMois[moisCourant]+ eDateAnnee;	
+	}
+
+    </script>
+  </body>
+</html>

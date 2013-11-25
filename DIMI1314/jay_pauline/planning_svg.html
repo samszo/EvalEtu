@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">    
+        //création d'un tableau de mois en json
+        var arrMois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet'];
+        
+        //creer la variable pour le mois en cours
+        var moisCourant = 1;
+
+        //charge un fichier svg externe
+        d3.xml("maquette/maquette-calendrier-jay.svg", "image/svg+xml", function(xml) {
+                //place le document svg dans lme body de la page html
+                document.body.appendChild(xml.documentElement);
+                changeMois();
+        });
+        
+        function precMois(){
+                if(moisCourant>0){
+                        moisCourant --;
+                }
+                changeMois();
+        }
+
+        function suivMois(){
+                if(moisCourant < arrMois.length-1){
+                        moisCourant ++;
+                }
+                changeMois();
+        }
+
+        function changeMois(){
+                //récupère la balise texte à modifier
+                var eDateMois = document.getElementById("dateMois");
+                //change la valeur de la balise texte
+                eDateMois.textContent = arrMois[moisCourant]+" 2032";        
+        }
+    </script>
+  </body>
+</html>

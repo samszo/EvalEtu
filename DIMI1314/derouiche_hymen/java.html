@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<script type="application/javascript"> 
+	function hello(prenom) {
+		alert("Bonjour "+prenom);
+		}
+	function Hello(prenom) {
+		console.log("Bonjour "+prenom);
+		}
+		
+	function ditLe(message){
+		var audioObj = document.createElement("audio");
+		audioObj.autoplay = "autoplay";
+
+		var sourceObj = document.createElement("source");
+		sourceObj.src = "bonjour.mp3";
+		sourceObj.type= "audio/mpeg";
+		audioObj.appendChild(sourceObj);
+
+		document.body.appendChild(audioObj);	
+	}
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Test js</title>
+
+</head>
+
+<body onload="Hello ('moi');">
+
+<div onmouseover="Hello ('Imen');">Imen</div>
+
+<script type="application/javascript"> 
+	Hello("Zappa");
+	ditLe("Zappa");
+</script>
+
+</body>
+
+</html>

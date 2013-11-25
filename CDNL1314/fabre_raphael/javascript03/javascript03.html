@@ -1,0 +1,36 @@
+<htmL>
+
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src = "javascript03.js"></script>
+<link href="javascript03.css" rel="stylesheet" type="text/css">
+
+ <style>
+
+ </style>
+
+	<script type="text/javascript">
+
+	function presence (action, nom) {
+		alert(nom + ' est ' + action)
+
+	};
+	
+
+	</script>
+</head>
+<body>
+
+<div id="formulaire">
+
+<div onClick="">Hervé Durand</div><div class="present bouton" onClick="presence ('présent','Hervé')">Présent</div>
+<div onClick="presence ('absent','Hervé')" class="absent bouton">Absent</div>
+<div onClick="">Denis Jacob</div><div class="present bouton" onClick="presence ('présent','Denis')">Présent</div>
+<div class="absent bouton" onClick="presence ('absent','Denis')">Absent</div>
+<div onClick="">Adolf Gluten</div><div class="present bouton" onClick="presence ('présent','Adolf')">Présent</div>
+<div class="absent bouton" onClick="presence ('absent','Adolf')">Absent</div>
+
+</div>
+</body>
+
+</html>
