@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta name="author" content="Darko Bunic"/>
+		<meta name="description" content="Drag and drop table content/rows with JavaScript"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no"/><!-- "position: fixed" fix for Android 2.2+ -->
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+		<script type="text/javascript">
+			var redipsURL = '/javascript/drag-and-drop-table-content-animation/';
+		</script>
+		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../redips-drag-min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<title>Exemple de drag and drop en calendrier</title>
+	</head>
+	<body>
+		<center>
+			
+			<!-- first drag region -->
+			<div id="drag1">
+				<table>
+					<colgroup>
+						<col width="30"/>
+						<col width="100"/>
+						<col width="100"/>
+						<col width="100"/>
+						<col width="100"/>
+						<col width="100"/>
+						<col width="100"/>
+						<col width="100"/>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th colspan="8" class="mark">Semaine 1</th>
+						</tr>
+						<tr class="rl">
+							<td class="rowhandler"></div></td>
+							<td class="cdark">lundi</td>
+							<td>Mardi</td>
+							<td>Mercredi</td>
+							<td>Jeudi</td>
+							<td>Vendredi</td>
+							<td class="cdark">Samedi</td>
+							<td>Dimanche</td>
+
+						</tr>
+						<tr class="rl">
+							<td class="rowhandler"><div id="r1_1" class="drag row"></div></td>
+							<td class="cdark"></td>
+							<td></td>
+							<td><div id="d1_1" class="drag blue">Algorithme</div></td>
+							<td></td>
+							<td class="cdark"></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="rd">
+							<td class="rowhandler"><div id="r2_1" class="drag row"></div></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="rl">
+							<td class="rowhandler"><div id="r3_1" class="drag row"></div></td>
+							<td><div id="d2_1" class="drag blue">Anglais</div></td>
+							<td class="cdark"></td>
+							<td><div id="d3_1" class="drag blue">Ergonomie Visuelles</div></td>
+							<td class="cdark"></td>
+							<td></td>
+							<td></td>
+							<td><div id="d4_1" class="drag blue">Methodologie & outils</div></td>
+						</tr>
+						<tr class="rd">
+							<td class="rowhandler"><div id="r4_1" class="drag row"></div></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="rl">
+							<td class="rowhandler"><div id="r5_1" class="drag row"></div></td>
+							<td><div id="d5_1" class="drag blue">Communication graphique</div></td>
+							<td class="cdark"></td>
+							<td><div id="d6_1" class="drag blue">Pratiques interactives</div></td>
+							<td class="cdark"></td>
+							<td><div id="d7_1" class="drag blue">Theorie de la communication</div></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="rd">
+							<td class="rowhandler"><div id="r6_1" class="drag row"></div></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="rl">
+							<td class="rowhandler"><div id="r7_1" class="drag row"></div></td>
+							<td class="cdark"></td>
+							<td></td>
+							<td><div id="d8_1" class="drag blue">Design d'interface</div></td>
+							<td></td>
+							<td class="cdark"></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+		</center>
+	</body>
+</html>
