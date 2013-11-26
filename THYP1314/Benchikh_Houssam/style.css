@@ -21,8 +21,9 @@ body {
 
 table {
     border: 3px solid #6495ED;
-    border-collapse: collapse;
+    border-collapse: separate;
 	overflow:scroll;
+
 }
 
 th {
@@ -100,12 +101,12 @@ td{
 
 
 #studentsInfo{
-float : right;
   border: 1px solid #000000;
-  padding: 1em;
+  padding: 18px ;
     width: 31%;
     border-left: 1px solid black;
     border-right: 1px solid black;
+	margin-left : 30em;
 }
 
 #studentsInfo h2{

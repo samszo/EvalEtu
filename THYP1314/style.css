@@ -1,0 +1,186 @@
+/* 
+    Document   : style
+    Created on : 14 oct. 2013, 23:29:02
+    Author     : geralodin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+html, body, #wrapper {
+
+    margin: 10px;
+    width: 99%;
+
+}
+
+body {
+    font: 14px Helvetica Neue;
+    text-rendering: optimizelegibility;
+}
+
+table {
+    border: 3px solid #6495ED;
+    border-collapse: collapse;
+	overflow:scroll;
+}
+
+th {
+    background-color: #EFF6FF;
+    border: 1px dotted #6495ED;
+    font-family: monospace;
+    padding: 5px;
+}
+
+.tdH {
+    border: 2px solid #6495ED;
+    font-family: sans-serif;
+    padding: 3px;
+    text-align: left;
+    vertical-align: middle;
+    width: 60px;
+}
+.tr{
+    border: 1px solid #6495ED;
+    
+}
+td{
+   
+    
+    padding: 2px;
+	border: 1px solid #6495ED;
+    vertical-align: top;
+    cursor:pointer;
+	width: 176px;
+	height:100px; 
+}
+
+
+
+
+.UE1-EC2 {
+    background-color: #9ECAE1;
+    fill: #9ECAE1;
+    padding: 2px;
+	border: 1px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    cursor:pointer;
+	width: 176px;
+	height:100px; 
+}
+
+
+.UE4-EC1 {
+    background-color: #BDBDBD;
+    fill: #BDBDBD;
+    padding: 2px;
+    border: 1px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    cursor:pointer;	
+		width: 176px;
+	height:100px; 
+}
+
+.UE4-EC2 {
+    background-color: #D9D9D9;
+    fill: #D9D9D9;
+    padding: 2px;
+	border: 1px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    cursor:pointer;
+		width: 176px;
+	height:100px; 
+}
+
+
+#studentsInfo{
+float : right;
+  border: 1px solid #000000;
+  padding: 1em;
+    width: 31%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#studentsInfo h2{
+    text-align: center;
+}
+
+.photo{
+    padding:5px;
+    height: 235px;
+}
+
+
+.photo img{
+    border:1px solid white;
+    border-radius: 5px;
+    width:100px;
+    height: 150px;
+}
+#present{
+ border:1px solid white;
+    border-radius: 5px;
+	position : absolute;
+    width:10px;
+    height: 10px;
+}
+
+#retard{
+ border:1px solid white;
+    border-radius: 5px;
+	position : absolute;
+    width:10px;
+    height: 10px;
+	margin-left : 31px;
+}
+#excuse{
+ border:1px solid white;
+    border-radius: 5px;
+	position : absolute;
+    width:10px;
+    height: 10px;
+	margin-left : 62px;
+}
+#abscent{
+ border:1px solid white;
+    border-radius: 5px;
+	position : absolute;
+    width:10px;
+    height: 10px;
+	margin-left : 93px;
+}
+
+.diagramme{
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 232px;
+    height: 150px;
+    left: 108px;
+    position: relative;
+    width: 315px;
+}
+
+#hideBlock{
+    bottom: 5px;
+    left: 158px;
+    position: relative;
+}
+
+#headBlock{
+    width:180px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#content{
+
+
+
+
+}

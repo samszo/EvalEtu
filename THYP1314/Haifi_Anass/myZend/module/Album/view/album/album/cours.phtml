@@ -1,0 +1,94 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'Planning CDNL 2013';
+$this->headTitle($title);
+?>
+	<div id="content">
+<h1>Planning CDNL 2013 - 2014</h1>
+
+
+        <div id="divWeeks">
+        <h2>Semaine 37 du 21/09/13 au 22/09/13</h2>
+         </div>
+<table  border="1" cellspacing="0" cellpadding="4" width="100%">
+	 <tr>
+	 	 <th> Heure </th>
+	 <th> Lundi 23/09/13 </th>
+	 <th> Mardi 24/09/13 </th>
+	 <th> Mercredi 25/09/13 </th>
+	 <th> Jeudi 26/09/13 </th>
+	 <th> Vendredi 27/09/13 </th>
+	 </tr>
+
+<?php $tab = array() ; $i = 0 ; foreach($cours as $cr ) { $tab[$i] = (array)$cr ; $i+=1; } ?>
+
+
+
+   	 <tr><td class='tdH'>09:00:00--12:00:00</td><td class='UE1-EC2'>  	 
+	  <div onClick="setcours('UE1-EC2');" >
+	   <h3> <?php echo $tab[0]['unite'] ?></h3><h5> <?php echo $tab[0]['nom_cours'] ?></h5><h4> <?php echo $tab[0]['professeur'] ?></h4><h5> <?php echo $tab[0]['salle'] ?></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class='UE4-EC1'>  	 
+	  <div onClick="setcours('UE4-EC1');" >
+	  <h3> <?php echo $tab[1]['unite'] ?></h3><h5> <?php echo $tab[1]['nom_cours'] ?></h5><h4> <?php echo $tab[1]['professeur'] ?></h4><h5> <?php echo $tab[1]['salle'] ?></h5></div>  </td>  <td class='UE4-EC1'>  	 
+	  <div onClick="setcours('UE4-EC1');" >
+	   <h3><?php echo $tab[1]['unite'] ?></h3><h5> <?php echo $tab[1]['nom_cours'] ?></h5><h4> <?php echo $tab[1]['professeur'] ?></h4><h5> <?php echo $tab[1]['salle'] ?></h5></div>  </td>  </tr>  <tr><td class='tdH'>12:00:00--15:00:00</td><td class='UE1-EC2'>  	 
+	  <div onClick="setcours('UE1-EC2');" >
+	   <h3> <?php echo $tab[0]['unite'] ?></h3><h5> <?php echo $tab[0]['nom_cours'] ?></h5><h4> <?php echo $tab[0]['professeur'] ?></h4><h5> <?php echo $tab[0]['salle'] ?></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class='UE4-EC2'>  	 
+	  <div onClick="setcours('UE4-EC2');" >
+	   <h3><?php echo $tab[2]['unite'] ?></h3><h5> <?php echo $tab[2]['nom_cours'] ?></h5><h4> <?php echo $tab[2]['professeur'] ?></h4><h5> <?php echo $tab[2]['salle'] ?></h5></div>  </td>  <td class='UE4-EC2'>  	 
+	  <div onClick="setcours('UE4-EC2');" >
+	   <h3><?php echo $tab[2]['unite'] ?></h3><h5> <?php echo $tab[2]['nom_cours'] ?></h5><h4> <?php echo $tab[2]['professeur'] ?></h4><h5> <?php echo $tab[2]['salle'] ?></h5></div>  </td>  </tr>  <tr><td class='tdH'>15:00:00--18:00:00</td><td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class=''>  	 
+	  <div onClick="setcours('');" >
+	   <h3></h3><h5></h5><h4></h4><h5></h5></div>  </td>  <td class='UE4-EC2'>  	 
+	  <div onClick="setcours('UE4-EC2');" >
+	   <h3><?php echo $tab[2]['unite'] ?></h3><h5> <?php echo $tab[2]['nom_cours'] ?></h5><h4> <?php echo $tab[2]['professeur'] ?></h4><h5> <?php echo $tab[2]['salle'] ?></h5></div>  </td>  <td class='UE4-EC2'>  	 
+	  <div onClick="setcours('UE4-EC2');" >
+	   <h3><?php echo $tab[2]['unite'] ?></h3><h5> <?php echo $tab[2]['nom_cours'] ?></h5><h4> <?php echo $tab[2]['professeur'] ?></h4><h5> <?php echo $tab[2]['salle'] ?></h5></div>  </td>  </tr>  
+</div>
+
+
+
+ <div id="studentsInfo">
+
+        </div>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="findStudents.js"></script>
+
+
+
+
+	 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
