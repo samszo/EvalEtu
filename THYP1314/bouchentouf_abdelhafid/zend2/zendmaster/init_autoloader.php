@@ -21,7 +21,9 @@ if (file_exists('vendor/autoload.php')) {
     $loader = include 'vendor/autoload.php';
 }
 
-$zf2Path = 'C:\wamp\www\ZendFrame\library';
+//$zf2Path = 'C:\wamp\www\ZendFrame\library';
+$zf2Path = "/Applications/XAMPP/xamppfiles/htdocs/zf2/library";
+
 
 if (is_dir('vendor/ZF2/library')) {
     $zf2Path = 'vendor/ZF2/library';
