@@ -89,6 +89,6 @@
 				<option value="https://picasaweb.google.com/data/feed/base/user/102961656570003949802/albumid/5931541532695278433?alt=rss&kind=photo&authkey=Gv1sRgCIvvqZ33v-voFA&hl=fr">CDNL 1314</option>
 			</select>
 		</form>
-		<div id="rssOutput">Le trombinoscope va arriver...</div>
+		<div id="rssOutput"></div>
 		<div id="lst" ></div>
-		
+		<!-- Merci Mr.Samuel  -->
