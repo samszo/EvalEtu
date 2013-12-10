@@ -5,6 +5,7 @@ class Personne {
 	 public $img;
 	 public $pres;
      public $abs;
+     public $notes;
     
 	function __construct($nom,$img,$pres,$abs) {
         $this->nom = $nom;

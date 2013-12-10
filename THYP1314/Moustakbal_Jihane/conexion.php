@@ -67,11 +67,10 @@ FOREIGN KEY (Idcours) REFERENCES cours(id_matiere)
 (
 IdEtudiant INT,
 IdMatiere CHAR(10),
-PRIMARY KEY(IdEtudiant, IdMatiere),
 note INT,
 exercice CHAR(15),
 matiere CHAR(15),
-
+PRIMARY KEY(IdEtudiant, IdMatiere),
 FOREIGN KEY (IdEtudiant) REFERENCES etudiants(id_etudiant),
 FOREIGN KEY (IdMatiere) REFERENCES matieres(id_matiere)
 )";
