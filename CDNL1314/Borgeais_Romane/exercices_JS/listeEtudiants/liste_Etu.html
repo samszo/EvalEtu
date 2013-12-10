@@ -1,7 +1,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script src="../js/jquery.min.js" ></script>
+	<link href="css/style_liste.css" rel="stylesheet" type="text/css">
+	<script src="../../jquery.min.js" ></script>
 	<script>
 	function presentliste(etu){
 		var dl = document.getElementById("lst"); 
@@ -48,42 +49,46 @@
 		}
 		
 		function showEtu(etu){
-			var d=document.createElement("div");
+			var d = document.createElement("div");
 			d.setAttribute('class', 'etu');
-			d.innerHTML = etu.nom;
+			d.innerHTML = '<p>' + etu.nom + '</p>';
 			document.body.appendChild(d);
 			
 			var tof = document.createElement("img");
-			tof.setAttribute('src', etu.url);
-			tof.setAttribute('alt', etu.nom);
-			tof.setAttribute('title', etu.nom);
+				tof.setAttribute('src', etu.url);
+				tof.setAttribute('alt', etu.nom);
+				tof.setAttribute('title', etu.nom);
+				tof.setAttribute('class', 'photo');
+
 			tof.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(tof);
 
 			var presImg = document.createElement("img");
-				presImg.setAttribute('src', 'present.jpg');
+				presImg.setAttribute('src', 'img/present.jpg');
 				presImg.setAttribute('alt', 'présent');
 				presImg.setAttribute('title', 'présent');
+				presImg.setAttribute('class', 'b_present');
+
 			presImg.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(presImg);
 
 			var absImg = document.createElement("img");
-				absImg.setAttribute('src', 'absent.jpg');
+				absImg.setAttribute('src', 'img/absent.jpg');
 				absImg.setAttribute('alt', 'absent');
 				absImg.setAttribute('title', 'absent');
-				absImg.addEventListener("click", function(){absentliste(etu)});
+				presImg.setAttribute('class', 'b_absent');
+
+			absImg.addEventListener("click", function(){absentliste(etu)});
 			d.appendChild(absImg);
 		};		
 	</script>
 	<style type="text/css">
-		.etu{
-		width:300px;
-		}
+
 		.listeA{
-			background-color:red;
+			background-color: red;
 		}
 		.listeP{
-			background-color:green;
+			background-color: green;
 		}
 	</style>
 	</head>
