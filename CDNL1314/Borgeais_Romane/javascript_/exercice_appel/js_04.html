@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Liste étudiants CDNL</title>
+
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript">
+			
+			var arrEtu = [{prenom:'Marc',nom:'Fairbrother',diplome:'CDNL'}
+				,{prenom:'Olivier',nom:'Chapelet',diplome:'CDNL'}
+				,{prenom:'Franck',nom:'Zappa',diplome:'CDNL'}
+			];
+		
+		</script>
+
+		<style type="text/css">
+
+			.etu
+			{
+				width:300px;
+			}
+		</style>
+
+	</head>
+	<body onload="showEtu(arrEtu);">
+
+		<div style="background-color:black; width:200px; height:200px; color:white;" id="divliste"></div>
+	</body>
+
+</html>

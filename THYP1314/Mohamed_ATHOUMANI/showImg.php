@@ -1,3 +1,9 @@
+<<<<<<< HEAD:THYP1314/Image.php
+
+
+
+=======
+>>>>>>> cd2fd4289bf43bc3f7c5c421c50533d1c8b93e7b:THYP1314/Mohamed_ATHOUMANI/showImg.php
 <?php
 include_once 'Personne.php';
 
@@ -50,7 +56,20 @@ if (isset($handle) && !empty($handle)) {
 <?php 
 foreach($personne as $p){ ?>
     <div class="photo">
+<<<<<<< HEAD:THYP1314/Image.php
+        <img <?php echo $p->img;?> 
+ <br>
+
+         
+         
+		<img id="present" src="img/present.jpg" alt="Present" title="Present" onClick="setPrescence(1,'<?php echo $_GET['data']?>');"/>
+		<img id="retard" src="img/retard.jpg" alt="Retard" title="Retard" onClick="setPrescence(2,'<?php echo $_GET['data']?>');"/>
+	    <img id="excuse" src="img/excuse.jpg" alt="Excuse" title="Excuse" onClick="setPrescence(3,'<?php echo $_GET['data']?>');"/>
+        <img id="abscent" src="img/abscent.jpg" alt="Abscent" title="Abscent" onClick="setPrescence(4,'<?php echo $_GET['data']?>');"/>
+
+=======
         <img <?php echo $p->img;?>/>
+>>>>>>> cd2fd4289bf43bc3f7c5c421c50533d1c8b93e7b:THYP1314/Mohamed_ATHOUMANI/showImg.php
         <p> Nom :</p>
         <p> Prenom :</p>
         <div class="diagramme">
@@ -111,6 +130,27 @@ foreach($personne as $p){ ?>
     canvas.append("g")
             .attr("transform","translate(0,80)")
             .call(axis);
+			
+			
+			
+			
+
+
+    function setPrescence(lib,cr) {
+
+$.ajax({
+type: "POST",
+url: "prescence.php",
+data: {data:lib,cours:cr},
+success: function(msg){
+alert( "Data Saved: " + msg );
+}
+});
+}
+//Call AJAX:
+$(document).ready(setPrescence(lib));
+
+
 </script> 
  
  <script type="text/javascript">

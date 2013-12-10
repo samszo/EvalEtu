@@ -58,4 +58,18 @@ table
 
 table{
     border-spacing: 0px ;
+    margin-right: 1em 25%;
+}
+
+
+.tout {
+position: relative;
+width: 65em;
+padding-right: 7em;
+}
+.images {
+position: absolute;
+top: -30em;
+right: 1em;
+width: 20em;
 }

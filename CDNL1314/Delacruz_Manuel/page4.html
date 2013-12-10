@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>JavaScript Exemple </title>
+<meta charset="utf-8" />
+
+    <script>
+
+           // creation du tableau en JSON  
+           // entre [] c est des listes entre {} des objets
+           //
+           // en javascript: array, fonctionne égalemement
+           // var arrEtu = array('samy', 'scooby', 'daphne') ;
+           // c est OK
+
+           var arrEtuCDNL = [{nom:'broche', prenom:'sophie' , sexe:'f', diplome:'CDNL1314'}   ,  
+                             {nom:'delacruz',  prenom:'manuel' , sexe:'m', diplome:'CDNL1314'} , 
+                             {nom:'jin', prenom:'jinjan' , sexe:'f', diplome:'CDNL1314'}];
+
+  
+     // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/page4.html
+     // OK 
+
+      var message = 'bonjour' ;
+
+     function EcrireBonjour(prenom)
+     {
+     	// commentaire en javascript
+
+
+       message +=  prenom;	
+
+       // alert(message);
+       console.log (message);
+
+       console.log(1+1);
+       // alert("re-re-coucou : " + prenom);
+       // console.log('bonjour' + prenom);
+
+     }
+
+     
+       function Ecrire(message)
+         {  
+     	     alert(message);
+         }
+
+
+        function presMessage(etu){
+            alert(etu.prenom+' '+etu.nom+' est présent');
+        };
+
+         function presMessagePresent(etu){
+             // alert(etu.prenom+' '+etu.nom+ ' est présent');
+
+                     var d=document.createElement("div");                     
+                     d.innerHTML = etu.prenom+' '+etu.nom+' '+ "est present";
+                     document.body.appendChild(d);
+        };
+
+
+        function presMessageAbsent(etu){
+             // alert(etu.prenom+' '+etu.nom+ ' est absent');
+
+
+                     var d=document.createElement("div");                     
+                     d.innerHTML = etu.prenom+' '+etu.nom+' '+ "est absent";
+                     document.body.appendChild(d);
+        };
+        
+
+        function showEtus (liste) {
+
+
+          var i = 0;
+
+           liste.forEach(function (etu) {
+                   console.log(etu);
+                   console.log("nom = " + etu.nom);
+                   console.log("prenom = " + etu.prenom);
+
+                   // premier code  OK
+                   /*
+                       document.write('<div class="etu">'  + etu.nom + ' ' + etu.prenom + '<br>');
+
+                       document.write('<img class="pres"    src="img/timeP.jpg" alt="Present"> ');
+                       document.write('<img class="absent"  src="img/timeA.jpg" alt="Absent"> ' + '<br>' );
+
+                       document.write('</div> <br>');
+                    */
+                       
+
+
+                      // pour present
+
+                     var d=document.createElement("div");
+                     d.setAttribute('class', 'etu');
+                     d.innerHTML = etu.prenom+' '+etu.nom+' ' + etu.diplome;
+                     document.body.appendChild(d);
+    
+                    var presImg = document.createElement("img");
+                    presImg.setAttribute('src', 'img/timeP.jpg');
+                    presImg.setAttribute('alt', 'présent');
+                    presImg.setAttribute('title', 'présent');
+                    presImg.setAttribute('id', 'present'+i);
+                    presImg.addEventListener("click", function(){presMessagePresent(etu)});
+                     d.appendChild(presImg);
+
+                      // pour absent
+    
+                     var absImg = document.createElement("img");
+                     absImg.setAttribute('src', 'img/timeA.jpg');
+                     absImg.setAttribute('alt', 'absent');
+                     absImg.setAttribute('title', 'absent');
+                     absImg.setAttribute('id', 'absent'+i);
+                     absImg.addEventListener("click", function(){presMessageAbsent(etu)});
+                     d.appendChild(absImg);
+                     i++;
+
+
+                   
+
+           } )
+
+        }
+
+        
+     //   showEtus (arrEtuCDNL);
+
+
+   </script>
+   
+</head>
+<body onload="showEtus(arrEtuCDNL);">
+
+</body>
+
+</html>

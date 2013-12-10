@@ -1,0 +1,6 @@
+Etape 1 : 
+
+Créer une base de données 'evalEtu'
+
+exporter le fichier evalEtu(1).sql 
+
