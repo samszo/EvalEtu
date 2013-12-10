@@ -18,7 +18,7 @@ var annee = date.substr(6,2);
 //alert(mois);
 //alert(annee);
 
-if (annee < 14) {
+		if (annee == 13) {
 
 jourstotal= mois*29,5 + jour - 6;
 semaine = jourstotal / 7 ;
@@ -28,7 +28,25 @@ semainechaine = '"'+semaine+'"';
 semaineronde = semainechaine.substr(1,2);
 //alert(semaineronde);
 semainescrollto =  "sem" + annee + '_' + semaineronde;
-alert(semainescrollto);
+
+semainepix = semaineronde - 38 ;
+
+var gopix = semainepix*500 + 400 ;
+
+
 };
 
 };
+
+
+
+
+$(document).ready(function() {
+
+	var gopix = 200 ;
+
+	$("html, body").delay( 800 ).animate({ scrollTop: 400 }, 1000, "easeInOutQuint");
+
+	
+
+});
