@@ -118,7 +118,7 @@
                     str += "[" + i + "]: " + item + "\n";
                 });
                 //alert(str);   
-                var url ="showImg.php";
+                var url ="Enregister.php";
                 OpenModelWindow(url,{ width: 500, height: 400, caption: "Liste des Etudiants THYP 1314"});
                             
             }    
