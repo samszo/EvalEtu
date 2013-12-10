@@ -1,0 +1,90 @@
+body {
+    font: 14px Helvetica Neue;
+    text-rendering: optimizelegibility;
+}
+
+th {
+    background-color: #EFF6FF;
+    border: 1px dotted #6495ED;
+    font-family: monospace;
+    padding: 5px;
+}
+.tdH {
+	background-color:#EFF6FF;
+    border: 2px solid #6495ED;
+    font-family: sans-serif;
+    padding: 3px;
+    text-align: left;
+    vertical-align: middle;
+    width: 60px;
+}
+
+.tdC {
+	
+    border: 2px solid #6495ED;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: top;
+    width: 176px;
+    cursor:pointer;
+}
+
+
+table {
+   /* border: 1px solid black;*/
+    border-collapse: collapse;
+}
+
+#studentsInfo{
+    background:  repeat scroll 0 0 #EEEEEE;
+  
+    position: relative;
+    bottom: 614px;
+    left: 1000px;
+    top: -470px;
+    width: 300px;
+    
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;;
+   
+}
+
+
+
+#studentsInfo h2{
+    text-align: center;
+}
+
+
+ #nom{
+	margin:90px;	
+ }
+
+.photo{
+    border:1px solid white;
+    width:150px;
+    height:150px;
+}
+
+#hideBlock{
+	
+    bottom: 5px;
+    left:200px;
+    position: relative;
+}
+
+#headBlock{
+    width:180px;
+    margin-left:30px;
+   /* margin-right: auto;*/
+}
+
+
+div.conteneur { 
+  	text-align:left; 
+  	clear:both;
+	border-style:solid;
+	border-width:2px;	
+}

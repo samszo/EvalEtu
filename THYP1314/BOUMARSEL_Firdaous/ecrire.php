@@ -2,7 +2,7 @@
 
 if (isset ($_GET['nom'])) {
 
-	require_once 'connexion.php';
+	require_once 'php/dbconfig.php';
 		
 	extract($_GET);
 	enregister($nom, $raison, html_entity_decode($cours));
@@ -16,7 +16,7 @@ if (isset ($_GET['nom'])) {
 function enregister($etu, $raison, $cours) {
 	//$date= date("Y-m-j H:i:s");
 	//$sql = "INSERT INTO notes(etu, exercice, cours, note, maj) VALUES ('$etu', '$exe', '$cours', $note, NOW()) ";
-	$sql = "INSERT INTO historique(etudiant, raison, cours, maj) VALUES ('$etu', '$raison', '$cours', NOW()) ";
+	$sql = "INSERT INTO etudiant(etudiant, raison, cours, maj) VALUES ('$etu', '$raison', '$cours', NOW()) ";
 	mysql_query($sql) or die('Requête invalide : ' . mysql_error());
 }
 

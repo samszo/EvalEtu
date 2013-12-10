@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=evalEtu;host=localhost',
+        'dsn'            => 'mysql:dbname=zf2;host=localhost',
 		'username' => 'root',
         'password' => '',
         'driver_options' => array(

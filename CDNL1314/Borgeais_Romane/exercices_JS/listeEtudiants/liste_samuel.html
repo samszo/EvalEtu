@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script src="../js/jquery.min.js" ></script>
+	<script src="../../js/jquery.min.js" ></script>
 	<script>
 	function presentliste(etu){
 		var dl = document.getElementById("lst"); 
@@ -61,14 +61,14 @@
 			d.appendChild(tof);
 
 			var presImg = document.createElement("img");
-				presImg.setAttribute('src', 'present.jpg');
+				presImg.setAttribute('src', 'img/present.jpg');
 				presImg.setAttribute('alt', 'présent');
 				presImg.setAttribute('title', 'présent');
 			presImg.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(presImg);
 
 			var absImg = document.createElement("img");
-				absImg.setAttribute('src', 'absent.jpg');
+				absImg.setAttribute('src', 'img/absent.jpg');
 				absImg.setAttribute('alt', 'absent');
 				absImg.setAttribute('title', 'absent');
 				absImg.addEventListener("click", function(){absentliste(etu)});

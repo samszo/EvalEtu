@@ -1,0 +1,23 @@
+h1{
+
+	font-size: 2px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+p
+{
+	font-size: 2px; /*em= adaptable a toutes les tailles d'écran*/
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.MaDivDeMerdeUne 
+{
+font-size: 3em;
+}
+
+.MaDivDeMerdeDeux
+{
+font-size: 4em;
+}

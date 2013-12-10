@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title>Planning 2013 - 2014</title>
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="scriptaculous/src/scriptaculous.js"></script>
+
         
     </head>
     <body>
@@ -11,9 +15,11 @@
             <h1>Planning CDNL 2013 - 2014 </h1>
         <?php
             
+            //$filePathLine = "https://docs.google.com/spreadsheet/pub?key=0AgsnhwdtLOYEdEZmcW9nak9GZjRJRU12NEwydVdKUWc&output=csv";
             $filePath = "csv.csv";
                     
-                    $content = file($filePath);
+                    $handle = fopen($filePath, "r+");
+                    $content = fread($handle, filesize($filePath));
                     $lines = explode("\n", $content);
                     $i = 0;
                     foreach ($lines as $line)
@@ -105,18 +111,19 @@
                                     //J'affiche mon tableau
                                 if($h == 15)
                                 {                                   
-                                        $wrap = "<h1>Semaine nÂ° ".$week." du ".$lundi." au ".$vendredi."</h1>
+                                        $wrap = "<h1>Semaine n° ".$week." du ".$lundi." au ".$vendredi.'</h1>
+                                        <div class=\'tout\'>
                                         <table>
                                         <tr>
                                             <td></td>
-                                            <td>Lundi<br/>".$lundi."</td>
+                                            <td>Lundi<br/>'.$lundi."</td>
                                             <td>Mardi<br/>".$mardi."</td>
                                             <td>Mercredi<br/>".$mercredi."</td>
                                             <td>Jeudi<br/>".$jeudi."</td>
                                             <td>Vendredi<br/>".$vendredi."</td>
                                         </tr>
                                         <tr>
-                                            <td class='horaire'>9h - 12h</td>
+                                            <td class='horaire'>9:00:00 - 12;00:00</td>
                                             ".$arrayLundi[0].
                                             $arrayMardi[0].
                                             $arrayMercredi[0].
@@ -124,7 +131,7 @@
                                             $arrayVendredi[0]."
                                         </tr>
                                         <tr>
-                                            <td class='horaire'>12h - 15h</td>
+                                            <td class='horaire'>12:00:00 - 15:00:00</td>
                                             ".$arrayLundi[1].
                                             $arrayMardi[1].
                                             $arrayMercredi[1].
@@ -132,7 +139,7 @@
                                             $arrayVendredi[1]."
                                         </tr>
                                         <tr>
-                                            <td class='horaire'>15h - 18h</td>".
+                                            <td class='horaire'>15:00:00 - 18:00:00</td>".
                                             $arrayLundi[2].
                                             $arrayMardi[2].
                                             $arrayMercredi[2].
@@ -149,12 +156,34 @@
                       
                       
                     }
+                         
                     
-                    
+            echo ' <div class="images"><button class="btn1">Masquer la liste</button><ul>';
             
+            $source_images = file('images.txt');
             
-            ?>
+            foreach ($source_images as $img)
+            {
+                $tab = explode(";", $img);
+                echo "<li>",$tab[0] ,"<br/><img src = ".$tab[1]." />
+                    <img src ='images/present.png' alt='Présent' title='Présent' onClick=\"alert('Présent')\"/>
+                    <img src ='images/absent.png' alt='Absent' title='Absent' onClick=\"alert('Absent')\"/>
+                    <img src ='images/retard.png' alt='Retard' title='Retard' onClick=\"alert('Retard')\"/>
+                    <img src ='images/excuse.png' alt='Excusé' title='Excusé' onClick=\"alert('Excusé')\"/>
+                    </li>";
+            }
+                
+            echo '</ul></div> </div>';
+?>
+    
+    <script>
+        $(".btn1").click(function(){
+            $(".images").slideUp();
+          });
+        $( "table" ).click(function() {
+          $( '.images' ).slideDown();
+        });
+    </script>
             
-
     </body>
 </html>
