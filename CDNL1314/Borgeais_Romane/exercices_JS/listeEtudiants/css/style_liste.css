@@ -75,9 +75,16 @@
 	display: inline-block;
 }
 
-.bouton{
+.boutonP{
 
 	display: inline-block;
 	float: right;
-	margin: 0px;
+	margin: 0px 5px 0px 0px;
+}
+
+.boutonP{
+
+	display: inline-block;
+	float: right;
+	margin: 0px 0px 0px 5px;
 }
