@@ -1,15 +1,20 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="css/style_liste.css" rel="stylesheet" type="text/css">
-	<script src="../../jquery.min.js"></script>
+    <link href="css/listeetudiants.css" rel="stylesheet" type="text/css">	
+	 
+	<script src="js/jquery.min.js" ></script>
 	<script>
+
+	  // tester la page : http://localhost/EvalEtu/CDNL1314/Delacruz_Manuel/listeEtudiants.html
+      // OK 
+
 	function presentliste(etu){
 		var dl = document.getElementById("lst"); 
 
 		var liste = document.createElement("div");
 			liste.setAttribute('class', 'listeP');
-			liste.innerHTML = ''+etu.nom+' est présent';
+			liste.innerHTML = etu.prenom+' '+etu.nom+' ' + ' est présent';
 		dl.appendChild(liste);
 		
 		
@@ -20,7 +25,7 @@
 		var dl = document.getElementById("lst"); 
 		var liste = document.createElement("div");
 			liste.setAttribute('class', 'listeA');
-			liste.innerHTML = ''+etu.nom+' est absent';
+			liste.innerHTML = etu.prenom+' '+etu.nom+' ' + ' est absent';
 		dl.appendChild(liste);
 		
 		
@@ -48,64 +53,73 @@
 				});
 		}
 		
+	
 		function showEtu(etu){
-			var d = document.createElement("div");
+
+
+			var d=document.createElement("div");
 			d.setAttribute('class', 'etu');
-			d.innerHTML = '<p>' + etu.nom + '</p>';
-			document.body.appendChild(d);
+			d.innerHTML = '<p>' + etu.nom + '</p>' + '<br>';
+			document.getElementById("lst2").appendChild(d);
 			
 			var tof = document.createElement("img");
-				tof.setAttribute('src', etu.url);
-				tof.setAttribute('alt', etu.nom);
-				tof.setAttribute('title', etu.nom);
-				tof.setAttribute('class', 'photo');
+			tof.setAttribute('src', etu.url);
+			tof.setAttribute('alt', etu.nom);
+			tof.setAttribute('title', etu.nom);
+			tof.setAttribute('class', 'photo');
+
+			
+			
 
 			tof.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(tof);
 
+			var br = document.createElement("br");
+			d.appendChild(br);
+
+
+
 			var presImg = document.createElement("img");
-				presImg.setAttribute('src', 'img/present.png');
+				presImg.setAttribute('src', 'img/present.jpg');
 				presImg.setAttribute('alt', 'présent');
 				presImg.setAttribute('title', 'présent');
-				presImg.setAttribute('class', 'bouton');
-
+				presImg.setAttribute('class', 'boutonpresent');
 			presImg.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(presImg);
 
 			var absImg = document.createElement("img");
-				absImg.setAttribute('src', 'img/absent.png');
+				absImg.setAttribute('src', 'img/absent.jpg');
 				absImg.setAttribute('alt', 'absent');
 				absImg.setAttribute('title', 'absent');
-				presImg.setAttribute('class', 'bouton');
-
-			absImg.addEventListener("click", function(){absentliste(etu)});
+				absImg.setAttribute('class', 'boutonabsent');
+				absImg.addEventListener("click", function(){absentliste(etu)});
 			d.appendChild(absImg);
 		};		
+
 	</script>
 	<style type="text/css">
-
+		.etu{
+		width:300px;
+		}
 		.listeA{
-			background-color: #E94842;
-			font-family: Antipasto, Arial, sans-serif;
-			margin-left: 40px;
+			background-color:red;
 		}
 		.listeP{
-			background-color: #42B075;
-			font-family: Antipasto, Arial, sans-serif;
-			margin-left: 40px;
+			background-color:green;
 		}
 	</style>
 	</head>
 	<body >
 		<form>
-				<select onchange="showRSS(this.value)" class="choix_formation">
-					<option value="">Selectioner un diplôme</option>
-					<option value="Google">THYP 1314</option>
-					<option value="https://picasaweb.google.com/data/feed/base/user/102961656570003949802/albumid/5931541532695278433?alt=rss&kind=photo&authkey=Gv1sRgCIvvqZ33v-voFA&hl=fr">CDNL 1314</option>
-				</select>
+			<select onchange="showRSS(this.value)">
+				<option value="">Selectioner un diplôme</option>
+				<option value="Google">THYP 1314</option>
+				<option value="https://picasaweb.google.com/data/feed/base/user/102961656570003949802/albumid/5931541532695278433?alt=rss&kind=photo&authkey=Gv1sRgCIvvqZ33v-voFA&hl=fr">CDNL 1314</option>
+			</select>
 		</form>
 		<br>
-		<div id="rssOutput">_THE TROMBINOSCOPE_</div>
+		<div id="rssOutput">Le trombinoscope va arriver...</div>
 		<div id="lst" ></div>
+		<div id="lst2" ></div>
 	</body>
 </html>
