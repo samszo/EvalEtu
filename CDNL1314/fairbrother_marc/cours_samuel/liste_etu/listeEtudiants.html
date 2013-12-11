@@ -30,7 +30,7 @@
 		function showEtu(etu){
 			var d=document.createElement("div");
 			d.setAttribute('class', 'etu');
-			d.innerHTML = etu.nom;
+			d.innerHTML = etu.nom + "<br>";
 			document.body.appendChild(d);
 			
 			function presentliste(){
@@ -41,9 +41,10 @@
 			};
 
 			var presImg = document.createElement("img");
-				presImg.setAttribute('src', 'present.jpg');
+				presImg.setAttribute('src', 'check.svg');
 				presImg.setAttribute('alt', 'présent');
 				presImg.setAttribute('title', 'présent');
+				presImg.setAttribute('class', 'button');
 				presImg.addEventListener("click", presentliste);
 			d.appendChild(presImg);
 
@@ -55,9 +56,10 @@
 			};
 			
 			var absImg = document.createElement("img");
-				absImg.setAttribute('src', 'absent.jpg');
+				absImg.setAttribute('src', 'cross.svg');
 				absImg.setAttribute('alt', 'absent');
 				absImg.setAttribute('title', 'absent');
+				absImg.setAttribute('class', 'button');
 				absImg.addEventListener("click", absentliste);
 			d.appendChild(absImg);
 			
@@ -77,25 +79,57 @@
 		};		
 	</script>
 	<style type="text/css">
+		body{
+		font-family:Arial;
+		font-size:1em;
+		background-color:#283333;
+		}
+		#rssOutput{
+		font-size:1.2em;
+		color:#fff;
+		margin: 0 0 15px 10px;
+		}
 		.etu{
-		padding:10px 0;
+		padding:10px;
+		margin:3px;
+		background-color:#577575;
 		float:left;
+		border-radius:10px;
+		border:solid 1px #000;
+		}
+		.button{
+		height:32px;
+		width:32px;
+		margin-top:10px;
+		margin-right:10px;
 		}
 		.listeA{
-			background-color:red;
+			color:#fff;
+			background-color:#a52c2c;
+			padding:2px 5px;
+			border-top:solid 1px #772222;
+			border-bottom:solid 1px #772222;
 		}
 		.listeP{
-			background-color:green;
+			color:#fff;
+			background-color:#3b8136;
+			padding:2px 5px;
+			border-top:solid 1px #275624;
+			border-bottom:solid 1px #275624;
 		}
 		.tof{
 		border:solid 1px #000;
+		margin-top:10px;
+		height:250px;
 		}
 		.container{
+			font-size:0.8em;
 			border:solid 1px #000;
-			margin:0 0 0 5px;
+			background-color: #fff;
+			margin:10px 0 0 5px;
 			float:right;
-			width:300px;
-			height:512px;
+			width:120px;
+			height:250px;
 		}
 	</style>
 	</head>
@@ -109,6 +143,5 @@
 		</form>
 		<br>
 		<div id="rssOutput">Le trombinoscope va arriver...</div>
-		<div id="lst" ></div>
 	</body>
 </html>
