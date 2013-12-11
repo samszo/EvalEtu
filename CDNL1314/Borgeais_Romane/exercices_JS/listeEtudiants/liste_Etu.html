@@ -2,14 +2,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="css/style_liste.css" rel="stylesheet" type="text/css">
-	<script src="../../jquery.min.js" ></script>
+	<script src="../../jquery.min.js"></script>
 	<script>
 	function presentliste(etu){
 		var dl = document.getElementById("lst"); 
 
 		var liste = document.createElement("div");
 			liste.setAttribute('class', 'listeP');
-			liste.innerHTML = etu.prenom+' '+etu.nom+' '+etu.diplome+' est présent';
+			liste.innerHTML = ''+etu.nom+' est présent';
 		dl.appendChild(liste);
 		
 		
@@ -20,7 +20,7 @@
 		var dl = document.getElementById("lst"); 
 		var liste = document.createElement("div");
 			liste.setAttribute('class', 'listeA');
-			liste.innerHTML = etu.prenom+' '+etu.nom+' '+etu.diplome+' est absent';
+			liste.innerHTML = ''+etu.nom+' est absent';
 		dl.appendChild(liste);
 		
 		
@@ -64,19 +64,19 @@
 			d.appendChild(tof);
 
 			var presImg = document.createElement("img");
-				presImg.setAttribute('src', 'img/present.jpg');
+				presImg.setAttribute('src', 'img/present.png');
 				presImg.setAttribute('alt', 'présent');
 				presImg.setAttribute('title', 'présent');
-				presImg.setAttribute('class', 'b_present');
+				presImg.setAttribute('class', 'bouton');
 
 			presImg.addEventListener("click", function(){presentliste(etu)});
 			d.appendChild(presImg);
 
 			var absImg = document.createElement("img");
-				absImg.setAttribute('src', 'img/absent.jpg');
+				absImg.setAttribute('src', 'img/absent.png');
 				absImg.setAttribute('alt', 'absent');
 				absImg.setAttribute('title', 'absent');
-				presImg.setAttribute('class', 'b_absent');
+				presImg.setAttribute('class', 'bouton');
 
 			absImg.addEventListener("click", function(){absentliste(etu)});
 			d.appendChild(absImg);
@@ -85,10 +85,12 @@
 	<style type="text/css">
 
 		.listeA{
-			background-color: red;
+			background-color: #E94842;
+			font-family: Antipasto, Arial, sans-serif;
 		}
 		.listeP{
-			background-color: green;
+			background-color: #42B075;
+			font-family: Antipasto, Arial, sans-serif;
 		}
 	</style>
 	</head>
@@ -101,7 +103,7 @@
 			</select>
 		</form>
 		<br>
-		<div id="rssOutput">Le trombinoscope va arriver...</div>
+		<div id="rssOutput">THE TROMBINOSCOPE</div>
 		<div id="lst" ></div>
 	</body>
 </html>

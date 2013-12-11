@@ -1,13 +1,40 @@
+@font-face {
+
+	font-family: 'Antipasto';
+	src: url('Antipasto_extralight.otf');
+}
+
+
 #lst {
 
-	float: left ;
-	width: 20% ;
+	float: right ;
+
+	width: 300px ;
+	height: 500px ;
+}
+
+.listeA {
+
+	padding: 10px;
+	margin: 10px;
+	border-radius: 3px;
+
+	color: white;
+}
+
+.listeP {
+
+	padding: 10px;
+	margin: 10px;
+	border-radius: 3px;
+
+	color: white;
 }
 
 .photo{
 
-	width: 30% ;
-	padding: 10px ; 
+	width: 40% ;
+	padding: 5px ; 
 
 	display: inline-block;
 	float: left ;
@@ -17,7 +44,7 @@
 
 .etu { 
 
-	font-family: Impact, Arial, sans-serif ; 
+	font-family: Antipasto, Arial, sans-serif ; 
 
 	background-color: #f2f2f2 ; 
 	margin : 10px ; 
@@ -31,22 +58,18 @@
 	display: inline-block;
 }
 
-.b_present {
+.bouton {
 
-	border: 1px black solid ; 
+	border: 1px black gray ; 
+	border-radius: 2px;
 	cursor: pointer;
-	display: inline-block;
+	padding: 2px ;
 
-	float: left ;
-	margin-left: 60px ;
 }
 
-.b_absent {
+#rssOutput{
 
-	border: 1px black solid ; 
-	cursor: pointer;
-	display: inline-block;
-
-	float: left ;
-	margin-left: 60px ;
+	text-align: center ; 
+	font-family: Antipasto, Arial, sans-serif;
+	font-size: 1.3em;
 }
