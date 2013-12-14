@@ -39,8 +39,10 @@ if (isset($handle) && !empty($handle)) {
         
         //on les découpe selon notre ...
         $trueLink = explode('</a>', $link);
-        $personne[] = new Personne($trueLink[0]);
-    } 	
+		$desc = utf8_decode((string)$element->title);
+        $personne[] = new Personne($trueLink[0],$desc);
+    } 
+
     
     /*echo "<h2>Liste des étudiants participants</h2>";
     var_dump($personne);
@@ -51,20 +53,27 @@ if (isset($handle) && !empty($handle)) {
 <h2>Liste des étudiants participants</h2><a href="#" id="hideBlock"><img src="hide.png"></a>
 <hr/>
 <?php 
-foreach($personne as $p){ ?>
+         
+  foreach($personne as $p){ ?>
     <div class="photo">
-        <img <?php echo $p->img;?> 
+        <img <?php $tab=array(); $tab = explode(" ",$p->nom);
+		echo $p->img;?> 
  <br>
-
-         
-         
+ 
 		<img id="present" src="img/present.jpg" alt="Present" title="Present" onClick="setPrescence(1,'<?php echo $_GET['data']?>');"/>
 		<img id="retard" src="img/retard.jpg" alt="Retard" title="Retard" onClick="setPrescence(2,'<?php echo $_GET['data']?>');"/>
 	    <img id="excuse" src="img/excuse.jpg" alt="Excuse" title="Excuse" onClick="setPrescence(3,'<?php echo $_GET['data']?>');"/>
         <img id="abscent" src="img/abscent.jpg" alt="Abscent" title="Abscent" onClick="setPrescence(4,'<?php echo $_GET['data']?>');"/>
+<div class="videoo">
+<p>
+		<video width="100" height="10" controls>
 
-        <p> Nom :</p>
-        <p> Prenom :</p>
+  <source src="http://translate.google.fr/translate_tts?ie=UTF-8&q=manger&tl=fr&total=1&idx=0&textlen=3" type="audio/mpeg">
+	</video>
+</p>
+	</div>	
+        <p> Nom :<?php echo $tab[0];?></p>
+        <p> Prenom :<?php if(sizeof($tab)>1){ echo $tab[1]; } else{ echo " ";  }       ?></p>
 		</br>
         <div class="diagramme">
             <p id="headBlock">
