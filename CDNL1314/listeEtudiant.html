@@ -29,7 +29,7 @@
 		{
 			//merci à http://stackoverflow.com/questions/10943544/how-to-parse-a-rss-feed-using-javascript
 			$.ajax({
-				  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
+				  url      : document.location.protocol + 'ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
 				  dataType : 'json',
 				  success  : function (data) {
 				    if (data.responseData.feed && data.responseData.feed.entries) {

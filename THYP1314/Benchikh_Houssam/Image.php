@@ -64,13 +64,7 @@ if (isset($handle) && !empty($handle)) {
 		<img id="retard" src="img/retard.jpg" alt="Retard" title="Retard" onClick="setPrescence(2,'<?php echo $_GET['data']?>');"/>
 	    <img id="excuse" src="img/excuse.jpg" alt="Excuse" title="Excuse" onClick="setPrescence(3,'<?php echo $_GET['data']?>');"/>
         <img id="abscent" src="img/abscent.jpg" alt="Abscent" title="Abscent" onClick="setPrescence(4,'<?php echo $_GET['data']?>');"/>
-<div class="videoo">
-<p>
-		<video width="100" height="10" controls>
 
-  <source src="http://translate.google.fr/translate_tts?ie=UTF-8&q=manger&tl=fr&total=1&idx=0&textlen=3" type="audio/mpeg">
-	</video>
-</p>
 	</div>	
         <p> Nom :<?php echo $tab[0];?></p>
         <p> Prenom :<?php if(sizeof($tab)>1){ echo $tab[1]; } else{ echo " ";  }       ?></p>

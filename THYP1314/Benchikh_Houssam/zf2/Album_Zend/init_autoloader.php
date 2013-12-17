@@ -22,7 +22,6 @@ if (file_exists('vendor/autoload.php')) {
 }
 
 //$zf2Path = false;
-//C:\W\wamp\www\ZendFramework-2.2.5
 $zf2Path = 'C:/W/wamp/www/ZendFramework-2.2.5/library';
 
 if (is_dir('vendor/ZF2/library')) {
