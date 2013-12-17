@@ -1,0 +1,57 @@
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+
+    function supalb(lib) {
+         alert('rt');
+    
+$.ajax({
+  url      : document.location.protocol + '//localhost/zendmaster/public/album/answer/'+lib,
+  dataType : 'json',
+  success  : function (data) {                
+            alert("popo");
+
+  }
+                
+          
+});
+
+}
+//Call AJAX:
+//$(document).ready(supalb());
+
+
+
+</script>
+
+
+
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'My albums';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p><a href="<?php echo $this->url('album', array(
+        'action'=>'add'));?>">Add new album</a></p>
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach($albums as $album) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($album->title);?></td>
+    <td><?php echo $this->escapeHtml($album->artist);?></td>    <td>
+        <a href="<?php echo $this->url('album',
+            array('action'=>'edit', 'id' => $album->id));?>">Edit</a>
+        <a onClick="supalb(<?php echo $album->id?>);" href="">
+            
+            Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
